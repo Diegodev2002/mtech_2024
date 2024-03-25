@@ -12,14 +12,14 @@ import Card from '../components/Card.astro';
 			autoplay
 			playsinline
 		>
-			<source src='/img/bg_mtech_2024.mp4' type='video/mp4' />
+			<source src='../videos/bg_mtech_2024.mp4' type='video/mp4' />
 		</video>
 		<img class='pt-10' src='/img/logoMtech2024.webp' alt='Mtech 2024' />
 	</section>
 	<section class='Mtech_info py-10'>
 		<h1>M-Tech 2024</h1>
 		<div
-			class='container mx-auto px-4 grid gap-4 text-white text-2xl text-center mt-10 font-bold'
+			class='container mx-auto grid gap-4 text-white text-2xl text-center my-20 font-bold'
 		>
 			<div
 				class='box_1 border-[#FFFDFF] border-[1px] rounded-xl max-w-fit px-10 py-5'
@@ -38,7 +38,7 @@ import Card from '../components/Card.astro';
 			</div>
 		</div>
 		<div
-			class='container px-4 mx-auto grid grid-cols-2 gap-16 py-10 text-white text-center text-xl mt-10'
+			class='container mx-auto grid grid-cols-2 gap-16 text-white text-center text-xl my-10'
 		>
 			<div class='flex'>
 				<div
@@ -58,12 +58,39 @@ import Card from '../components/Card.astro';
 					autoplay
 					playsinline
 				>
-					<source src='/img/final_mtech_2023.mp4' type='video/mp4' />
+					<source src='../videos/final_mtech_2023.mp4' type='video/mp4' />
 				</video>
 			</div>
 			<div>
+				<video src='../videos/robot_mtech_1.webm' muted loop autoplay playsinline>
+				</video>
+			</div>
+			<div
+				class='flex box_4 border-[#FFFDFF] border-[4px] rounded max-w-fit md:w-[500px] align-center m-auto'
+			>
+				<p class='px-10 py-5 max-h-fit'>
+					Las categorías de M-Tech 2024 te permitirán sobrepasar los límites de
+					tu imaginación, poner a prueba tus habilidades en robótica, crear
+					innovaciones y potenciar tus habilidades blandas
+				</p>
+			</div>
+		</div>
+		<div>
+			<h2 class='py-10'>CATEGORÍAS</h2>
+			<div
+				class='container relative grid grid-cols-2 mx-auto my-2 place-items-center text-white text-center text-xl font-bold'
+			>
+				<div
+					class='box_5 absolute right-1/2 border-[#FFFDFF] border-[4px] rounded w-[500px] py-14 px-10 m-0 text-2xl'
+				>
+					<h3 class='text-[#FF44CC] font-bold text-3xl p-3'>SUMO AUTÓNOMO</h3>
+					Sumo Autónomo consiste en crear un robot autónomo para combatir en un área
+					de lucha denominada Dojo.Nivel educativo: Secundaria
+				</div>
+
 				<video
-					src='../img/robot_mtech_1.webm'
+					class='h-[400px] col-start-2'
+					src='../videos/mtech_robot_left.webm'
 					muted
 					loop
 					autoplay
@@ -72,28 +99,11 @@ import Card from '../components/Card.astro';
 				</video>
 			</div>
 			<div
-				class='box_4 border-[#FFFDFF] border-[4px] rounded max-h-fit max-w-fit md:w-[500px] px-10 py-5 mx-auto'
+				class='container mx-auto grid grid-cols-2 gap-16 text-white text-center text-xl my-10 font-bold'
 			>
-				Las categorías de M-Tech 2024 te permitirán sobrepasar los límites de tu
-				imaginación, poner a prueba tus habilidades en robótica, crear
-				innovaciones y potenciar tus habilidades blandas
-			</div>
-		</div>
-		<div class='py-20'>
-			<h2>CATEGORÍAS</h2>
-			<div
-				class='container px-4 mx-auto grid grid-cols-2 py-10 text-white text-center text-xl mt-10 font-bold'
-			>
-				<div
-					class='box_5 border-[#FFFDFF] border-[4px] rounded max-w-fit md:w-[470px] px-10 py-5 mx-auto m-auto text-2xl'
-				>
-					<h3 class='text-[#FF44CC] font-bold text-3xl pb-4'>SUMO AUTÓNOMO</h3>
-					Sumo Autónomo consiste en crear un robot autónomo para combatir en un área
-					de lucha denominada Dojo.Nivel educativo: Secundaria
-				</div>
 				<div>
 					<video
-						src='../img/mtech_robot_left.webm'
+						src='../videos/mtech_robot_kungfu.webm'
 						muted
 						loop
 						autoplay
@@ -101,24 +111,10 @@ import Card from '../components/Card.astro';
 					>
 					</video>
 				</div>
-			</div>
-			<div
-				class='container px-4 mx-auto grid grid-cols-2 gap-16 py-10 text-white text-center text-xl mt-10 font-bold'
-			>
-				<div>
-					<video
-					src='../img/mtech_robot_kungfu.webm'
-					muted
-					loop
-					autoplay
-					playsinline
-				>
-				</video>
-				</div>
 				<div
-					class='box_5 border-[#FFFDFF] border-[4px] rounded max-w-fit md:w-[500px] px-10 py-5 mx-auto m-auto text-2xl'
+					class='box_5 border-[#FFFDFF] border-[4px] rounded max-w-fit md:w-[500px] px-10 py-4 mx-auto m-auto text-2xl'
 				>
-					<h3 class='text-[#FF44CC] font-bold text-3xl pb-4'>
+					<h3 class='text-[#FF44CC] font-bold text-3xl py-4'>
 						M-TECH INNOVATIONS
 					</h3>
 					M-Tech Innovations consiste en desarrollar un proyecto robótico que optimice
@@ -137,19 +133,19 @@ import Card from '../components/Card.astro';
 				</div>
 				<div>
 					<video
-					src='../img/mtech_robot_fallen.webm'
-					muted
-					loop
-					autoplay
-					playsinline
-				>
-				</video>
+						src='../videos/mtech_robot_fallen.webm'
+						muted
+						loop
+						autoplay
+						playsinline
+					>
+					</video>
 				</div>
 			</div>
 		</div>
 		<div class='py-10 pb-16'>
 			<h2>SEDES</h2>
-			<div class='flex text-white gap-4 py-10 px-7 mx-auto'>
+			<div class='flex justify-between gap-2 text-white py-10 px-14'>
 				<div
 					class='box_6 border-[#FFFDFF] border-[4px] rounded md:w-[450px] px-10 py-auto text-xl text-center flex flex-col justify-center'
 				>
@@ -185,7 +181,7 @@ import Card from '../components/Card.astro';
 		</div>
 		<div class='py-10 pb-16'>
 			<h2>ORGANIZADO POR:</h2>
-			<div class='container flex pt-16 gap-6 mx-auto'>
+			<div class='container flex justify-between pt-16 gap-6 mx-auto'>
 				<img src='../img/logo_igeco.webp' alt='Logotipo Igeco' />
 				<img src='../img/Logo_messe.webp' alt='Logotipo Messe' />
 			</div>
@@ -349,5 +345,16 @@ import Card from '../components/Card.astro';
 			rgba(157, 34, 241, 1) 78%,
 			rgba(1, 0, 236, 1) 100%
 		);
+	}
+
+	@media (max-width: 640px) {
+	}
+	@media (min-width: 768px) {
+	}
+	@media (min-width: 1024px) {
+	}
+	@media (min-width: 1280px) {
+	}
+	@media (min-width: 1536px) {
 	}
 </style>
