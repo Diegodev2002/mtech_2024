@@ -11,13 +11,41 @@ export function Registro() {
 
   const municipios = estadoSeleccionado ? estados[estadoSeleccionado] : []
 
+  const [genero1, setGeneroSeleccionado1 ] = useState('')
+  const [genero2, setGeneroSeleccionado2] = useState('')
+  const [genero3, setGeneroSeleccionado3] = useState('')
+
+
+  const handleGenero_integrante_1Change = (e) => {
+    const genero_integrante1 = e.target.value
+    setGeneroSeleccionado1(genero_integrante1)
+  }
+  const handleGenero_integrante_2Change = (e) => {
+    const genero_integrante2 = e.target.value
+    setGeneroSeleccionado2(genero_integrante2)
+  }
+  const handleGenero_integrante_3Change = (e) => {
+    const genero_integrante3 = e.target.value
+    setGeneroSeleccionado3(genero_integrante3)
+  }
+
+
+  
+
+  const correcto = genero1 === genero2 && genero2 === genero3 && genero1 === genero3 
+  const buttonDisabled = correcto ? 'bg-gray-500 text-gray-600' : 'bg-blue-500 hover:bg-blue-700 text-white '
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = new FormData(e.target)
     const data = Object.fromEntries(formData.entries())
-
-    console.log(data)
+    if(!correcto){
+      console.log(data)   
+    }
   }
+
+  console.log(genero1,genero2,genero3)
+  console.log(correcto)
 
   return (
     <div className='text-white font-bold text-center bg-slate-700 p-5 rounded-2xl'>
@@ -40,13 +68,13 @@ export function Registro() {
                 id='nombre_equipo'
                 required
                 autoComplete='nombre_equipo'
-                className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                className='block flex-1 border-0 bg-transparent py-1.5 px-4 focus:ring-0 sm:text-sm sm:leading-6'
               />
             </div>
           </div>
         </div>
 
-        <div className='flex gap-4 justify-center mt-5'>
+        <div className='grid sm:flex gap-4 justify-center mt-5'>
           <div>
             <p className='text-sm font-medium leading-6'>Sede</p>
             <select
@@ -67,9 +95,10 @@ export function Registro() {
             <p className='text-sm font-medium leading-6'>Categoría</p>
             <select
               name='categoria'
+              required
               className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
             >
-              <option>elige una categoría</option>
+              <option value='' defaultValue>elige una categoría</option>
               <option>Sumo Autónomo</option>
               <option>M-Tech Innovations</option>
               <option>M-Tech Engineers</option>
@@ -77,7 +106,7 @@ export function Registro() {
           </div>
         </div>
 
-        <div className='flex gap-4 place-content-center mt-5'>
+        <div className='grid sm:flex gap-4 place-content-center mt-5 mx-8'>
           <div>
             <label
               htmlFor='nombre_escuela'
@@ -85,14 +114,15 @@ export function Registro() {
             >
               Nombre de la escuela
             </label>
-            <div className='mt-2'>
+            <div className='mt-2 '>
               <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md'>
                 <input
                   type='text'
                   name='nombre_escuela'
                   id='nombre_escuela'
                   autoComplete='nombre_escuela'
-                  className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                  required
+                  className='block flex-1 border-0 bg-transparent py-1.5 px-4 focus:ring-0 sm:text-sm sm:leading-6'
                 />
               </div>
             </div>
@@ -111,15 +141,16 @@ export function Registro() {
                   name='direccion'
                   id='direccion'
                   autoComplete='direccion'
-                  className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                  required
+                  className='block flex-1 border-0 bg-transparent py-1.5 px-4 focus:ring-0 sm:text-sm sm:leading-6'
                 />
               </div>
             </div>
           </div>
         </div>
 
-        <div className='flex gap-4 mt-5'>
-          <div className='sm:col-span-2'>
+        <div className='grid lg:flex gap-4 mt-5 mx-8 justify-center'>
+          <div className='lg:col-span-2'>
             <label
               htmlFor='estado'
               className='block text-sm font-medium leading-6 text-white'
@@ -147,9 +178,9 @@ export function Registro() {
             </div>
           </div>
 
-          <div className='sm:col-span-2 sm:col-start-1'>
+          <div className='lg:col-span-2  sm:col-start-1'>
             <label
-              htmlFor='munucipio'
+              htmlFor='municipio'
               className='block text-sm font-medium leading-6 text-white'
             >
               Municipio
@@ -157,8 +188,8 @@ export function Registro() {
             <div className='mt-2'>
               {estadoSeleccionado && (
                 <select
-                  name='munucipio'
-                  id='munucipio'
+                  name='municipio'
+                  id='municipio'
                   className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
                   required
                 >
@@ -175,7 +206,7 @@ export function Registro() {
             </div>
           </div>
 
-          <div className='sm:col-span-2'>
+          <div className='lg:col-span-2'>
             <label
               htmlFor='cp'
               className='block text-sm font-medium leading-6 text-white'
@@ -183,28 +214,31 @@ export function Registro() {
               ZIP / Codigo postal
             </label>
             <div className='mt-2'>
+            <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 w-full'>
               <input
                 type='text'
                 name='cp'
                 id='cp'
                 autoComplete='cp'
-                className='block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-              />
+                required
+                className='block flex-1 border-0 bg-transparent py-1.5 px-4 focus:ring-0 sm:text-sm sm:leading-6'/>
+            </div>
             </div>
           </div>
         </div>
+        <hr className='mt-10' />
 
-        <div className='mt-20 flex gap-4'>
-          <p className='text-start'>
+        <div className='grid lg:flex gap-4 justify-center lg:justify-between mt-10 lg:mt-20'>
+          <p className='mx-auto text-xl'>
             Captura los datos de los Integrantes <br />
-            <span className='font-normal'>
-              registra a tu equipo, el equipo debe de estar integrado por un
+            <span className='mx-auto font-normal text-xs'>
+              Registra a tu equipo, el equipo debe de estar integrado por un
               coach, 3 integrantes y debe de ser de genero mixto (2 mujeres y 1
               hombre o 2 hombres y una mujer)
             </span>
           </p>
           <div>
-            <div className='flex gap-4'>
+            <div className='grid lg:flex gap-4'>
               <div className='w-full'>
                 <label
                   htmlFor='nombre_coach'
@@ -219,7 +253,8 @@ export function Registro() {
                       name='nombre_coach'
                       id='nombre_coach'
                       autoComplete='nombre_coach'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -239,7 +274,8 @@ export function Registro() {
                       name='paterno_coach'
                       id='paterno_coach'
                       autoComplete='nombre_coach'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -259,14 +295,15 @@ export function Registro() {
                       name='materno_coach'
                       id='materno_coach'
                       autoComplete='materno_coach'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className='flex gap-4 mt-5'>
+            <div className='grid sm:flex gap-4 mt-5'>
               <div className='w-full'>
                 <label
                   htmlFor='genero_coach'
@@ -274,14 +311,15 @@ export function Registro() {
                 >
                   Genero
                 </label>
-                <div className='mt-2'>
-                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                <div className='mt-2 '>
+                  <div className='flex mx-auto max-w-max rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
                     <select
                       name='genero_coach'
                       id='genero_coach'
-                      className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
+                      required
+                      className='block w-full mx-auto rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
                     >
-                      <option>elige una opción</option>
+                      <option value='' defaultValue>elige una opción</option>
                       <option>Mujer</option>
                       <option>Hombre</option>
                     </select>
@@ -303,14 +341,12 @@ export function Registro() {
                       name='edad_coach'
                       id='edad_coach'
                       autoComplete='edad_coach'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className='flex gap-4 mt-5'>
               <div className='w-full'>
                 <label
                   htmlFor='telefono_coach'
@@ -324,11 +360,16 @@ export function Registro() {
                       type='number'
                       name='telefono_coach'
                       id='telefono_coach'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div className='grid sm:flex gap-4 mt-5'>
+              
 
               <div className='w-full'>
                 <label
@@ -344,7 +385,8 @@ export function Registro() {
                       name='email_coach'
                       id='email_coach'
                       autoComplete='email_coach'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -354,12 +396,12 @@ export function Registro() {
         </div>
         <hr className='mt-10' />
 
-        <div className='mt-20 flex gap-4'>
-          <p className='text-start'>
+        <div className='grid lg:flex gap-4  lg:justify-between mt-10 lg:mt-20'>
+          <p className='mx-auto text-xl'>
             Captura datos del integrante 1 <br />
           </p>
           <div>
-            <div className='flex gap-4'>
+            <div className='grid lg:flex gap-4'>
               <div className='w-full'>
                 <label
                   htmlFor='nombre_integrante1'
@@ -374,7 +416,8 @@ export function Registro() {
                       name='nombre_integrante1'
                       id='nombre_integrante1'
                       autoComplete='nombre_integrante1'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -394,7 +437,8 @@ export function Registro() {
                       name='paterno_integrante1'
                       id='paterno_integrante1'
                       autoComplete='paterno_integrante1'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -414,14 +458,15 @@ export function Registro() {
                       name='materno_integrante1'
                       id='materno_integrante1'
                       autoComplete='materno_integrante1'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className='flex gap-4 mt-5'>
+            <div className='grid sm:flex gap-4 mt-5'>
               <div className='w-full'>
                 <label
                   htmlFor='genero_integrante1'
@@ -430,13 +475,15 @@ export function Registro() {
                   Genero
                 </label>
                 <div className='mt-2'>
-                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                  <div className='flex mx-auto max-w-max rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
                     <select
                       name='genero_integrante1'
                       id='genero_integrante1'
-                      className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
+                      required
+                      onChange={handleGenero_integrante_1Change}
+                      className='block w-full mx-auto rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
                     >
-                      <option>elige una opción</option>
+                      <option value='' defaultValue>elige una opción</option>
                       <option>Mujer</option>
                       <option>Hombre</option>
                     </select>
@@ -454,18 +501,16 @@ export function Registro() {
                 <div className='mt-2'>
                   <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
                     <input
+                    required
                       type='number'
                       name='edad_integrante1'
                       id='edad_integrante1'
                       autoComplete='edad_integrante1'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className='flex gap-4 mt-5'>
               <div className='w-full'>
                 <label
                   htmlFor='telefono_integrante1'
@@ -479,11 +524,16 @@ export function Registro() {
                       type='number'
                       name='telefono_integrante1'
                       id='telefono_integrante1'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div className='grid sm:flex gap-4 mt-5'>
+              
 
               <div className='w-full'>
                 <label
@@ -495,11 +545,12 @@ export function Registro() {
                 <div className='mt-2'>
                   <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
                     <input
+                    required
                       type='email'
                       name='email_integrante1'
                       id='email_integrante1'
                       autoComplete='email_integrante1'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -509,12 +560,12 @@ export function Registro() {
         </div>
         <hr className='mt-10' />
 
-        <div className='mt-20 flex gap-4'>
-          <p className='text-start'>
+        <div className='grid lg:flex gap-4 lg:justify-between mt-10 lg:mt-20'>
+          <p className='mx-auto text-xl'>
             Captura datos del integrante 2 <br />
           </p>
           <div>
-            <div className='flex gap-4'>
+            <div className='grid lg:flex gap-4'>
               <div className='w-full'>
                 <label
                   htmlFor='nombre_integrante2'
@@ -529,7 +580,8 @@ export function Registro() {
                       name='nombre_integrante2'
                       id='nombre_integrante2'
                       autoComplete='nombre_integrante2'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -549,7 +601,8 @@ export function Registro() {
                       name='paterno_integrante2'
                       id='paterno_integrante2'
                       autoComplete='paterno_integrante2'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -569,14 +622,15 @@ export function Registro() {
                       name='materno_integrante2'
                       id='materno_integrante2'
                       autoComplete='materno_integrante2'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className='flex gap-4 mt-5'>
+            <div className='grid sm:flex gap-4 mt-5'>
               <div className='w-full'>
                 <label
                   htmlFor='genero_integrante2'
@@ -585,13 +639,15 @@ export function Registro() {
                   Genero
                 </label>
                 <div className='mt-2'>
-                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                  <div className='flex  mx-auto max-w-max rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
                     <select
+                    required
                       name='genero_integrante2'
                       id='genero_integrante2'
+                      onChange={handleGenero_integrante_2Change}
                       className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
                     >
-                      <option>elige una opción</option>
+                      <option value='' defaultValue>elige una opción</option>
                       <option>Mujer</option>
                       <option>Hombre</option>
                     </select>
@@ -609,18 +665,16 @@ export function Registro() {
                 <div className='mt-2'>
                   <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
                     <input
+                    required
                       type='number'
                       name='edad_integrante2'
                       id='edad_integrante2'
                       autoComplete='edad_integrante2'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className='flex gap-4 mt-5'>
               <div className='w-full'>
                 <label
                   htmlFor='telefono_integrante2'
@@ -634,11 +688,16 @@ export function Registro() {
                       type='number'
                       name='telefono_integrante2'
                       id='telefono_integrante2'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div className='grid sm:flex gap-4 mt-5'>
+              
 
               <div className='w-full'>
                 <label
@@ -654,7 +713,8 @@ export function Registro() {
                       name='email_integrante2'
                       id='email_integrante2'
                       autoComplete='email_integrante2'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -664,12 +724,12 @@ export function Registro() {
         </div>
         <hr className='mt-10' />
 
-        <div className='mt-20 flex gap-4'>
-          <p className='text-start'>
+        <div className='grid lg:flex gap-4 lg:justify-between mt-10 lg:mt-20'>
+          <p className='mx-auto text-xl '>
             Captura datos del integrante 3 <br />
           </p>
           <div>
-            <div className='flex gap-4'>
+            <div className='grid lg:flex gap-4'>
               <div className='w-full'>
                 <label
                   htmlFor='nombre_integrante3'
@@ -684,7 +744,8 @@ export function Registro() {
                       name='nombre_integrante3'
                       id='nombre_integrante3'
                       autoComplete='nombre_integrante3'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -704,7 +765,8 @@ export function Registro() {
                       name='paterno_integrante3'
                       id='paterno_integrante3'
                       autoComplete='paterno_integrante3'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -724,14 +786,15 @@ export function Registro() {
                       name='materno_integrante3'
                       id='materno_integrante3'
                       autoComplete='materno_integrante3'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className='flex gap-4 mt-5'>
+            <div className='grid sm:flex gap-4 mt-5'>
               <div className='w-full'>
                 <label
                   htmlFor='genero_integrante3'
@@ -740,13 +803,15 @@ export function Registro() {
                   Genero
                 </label>
                 <div className='mt-2'>
-                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                  <div className='flex mx-auto max-w-max rounded-md sadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
                     <select
                       name='genero_integrante3'
                       id='genero_integrante3'
+                      required
+                      onChange={handleGenero_integrante_3Change}
                       className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
                     >
-                      <option>elige una opción</option>
+                      <option value='' defaultValue>elige una opción</option>
                       <option>Mujer</option>
                       <option>Hombre</option>
                     </select>
@@ -768,14 +833,12 @@ export function Registro() {
                       name='edad_integrante3'
                       id='edad_integrante3'
                       autoComplete='edad_integrante3'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className='flex gap-4 mt-5'>
               <div className='w-full'>
                 <label
                   htmlFor='telefono_integrante3'
@@ -789,11 +852,16 @@ export function Registro() {
                       type='number'
                       name='telefono_integrante3'
                       id='telefono_integrante3'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div className='grid sm:flex gap-4 mt-5'>
+              
 
               <div className='w-full'>
                 <label
@@ -803,13 +871,14 @@ export function Registro() {
                   Correo
                 </label>
                 <div className='mt-2'>
-                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                  <div className='flexrounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
                     <input
                       type='email'
                       name='email_integrante3'
                       id='email_integrante3'
                       autoComplete='email_integrante3'
-                      className='block flex-1 border-0 bg-transparent py-1.5 pl-1 focus:ring-0 sm:text-sm sm:leading-6'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
                 </div>
@@ -820,7 +889,8 @@ export function Registro() {
 
         <button
           type='submit'
-          className='mt-10 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded'
+          disabled={correcto}
+          className={`mt-10 ${buttonDisabled} font-bold py-2 px-5 rounded`}
         >
           Enviar
         </button>
