@@ -3,6 +3,7 @@ import { estados } from '../../data/constans_estados.js'
 
 export function Registro() {
   const [estadoSeleccionado, setEstadoSeleccionado] = useState('')
+  const [message, setMessage] = useState('')
 
   const handleEstadoChange = (event) => {
     const estado = event.target.value
@@ -11,10 +12,9 @@ export function Registro() {
 
   const municipios = estadoSeleccionado ? estados[estadoSeleccionado] : []
 
-  const [genero1, setGeneroSeleccionado1 ] = useState('')
+  const [genero1, setGeneroSeleccionado1] = useState('')
   const [genero2, setGeneroSeleccionado2] = useState('')
   const [genero3, setGeneroSeleccionado3] = useState('')
-
 
   const handleGenero_integrante_1Change = (e) => {
     const genero_integrante1 = e.target.value
@@ -29,30 +29,50 @@ export function Registro() {
     setGeneroSeleccionado3(genero_integrante3)
   }
 
+  const correcto =
+    genero1 === genero2 && genero2 === genero3 && genero1 === genero3
+  const buttonDisabled = correcto
+    ? 'bg-gray-500 text-gray-600'
+    : 'bg-blue-500 hover:bg-blue-700 text-white '
 
-  
-
-  const correcto = genero1 === genero2 && genero2 === genero3 && genero1 === genero3 
-  const buttonDisabled = correcto ? 'bg-gray-500 text-gray-600' : 'bg-blue-500 hover:bg-blue-700 text-white '
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const formData = new FormData(e.target)
     const data = Object.fromEntries(formData.entries())
-    if(!correcto){
-      console.log(data)   
+
+    if (!correcto) {
+      console.log(data)
+      try {
+        const guardar_registro = await fetch(
+          'http://localhost:3000/guardar-registro',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          }
+        )
+        const response = await guardar_registro.json()
+        console.log(response)
+        if (response.status) {
+          setMessage('Tu registro se guardo correctamente')
+          document.getElementById('form-register').reset()
+        }
+      } catch (error) {
+        console.log(error)
+        setMessage('Error al guardar el registro intenta más tarde...')
+        document.getElementById('form-register').reset()
+      }
     }
   }
-
-  console.log(genero1,genero2,genero3)
-  console.log(correcto)
 
   return (
     <div className='text-white font-bold text-center bg-slate-700 p-5 rounded-2xl'>
       <p className='text-2xl'>REGISTRATE</p>
 
       <p className='mt-10'>Captura los datos de tu equipo</p>
-      <form onSubmit={handleSubmit} className='mt-5'>
+      <form onSubmit={handleSubmit} className='mt-5' id='form-register'>
         <div className='grid place-content-center '>
           <label
             htmlFor='nombre_equipo'
@@ -98,7 +118,9 @@ export function Registro() {
               required
               className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
             >
-              <option value='' defaultValue>elige una categoría</option>
+              <option value='' defaultValue>
+                elige una categoría
+              </option>
               <option>Sumo Autónomo</option>
               <option>M-Tech Innovations</option>
               <option>M-Tech Engineers</option>
@@ -214,15 +236,16 @@ export function Registro() {
               ZIP / Codigo postal
             </label>
             <div className='mt-2'>
-            <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 w-full'>
-              <input
-                type='text'
-                name='cp'
-                id='cp'
-                autoComplete='cp'
-                required
-                className='block flex-1 border-0 bg-transparent py-1.5 px-4 focus:ring-0 sm:text-sm sm:leading-6'/>
-            </div>
+              <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 w-full'>
+                <input
+                  type='text'
+                  name='cp'
+                  id='cp'
+                  autoComplete='cp'
+                  required
+                  className='block flex-1 border-0 bg-transparent py-1.5 px-4 focus:ring-0 sm:text-sm sm:leading-6'
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -319,7 +342,9 @@ export function Registro() {
                       required
                       className='block w-full mx-auto rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
                     >
-                      <option value='' defaultValue>elige una opción</option>
+                      <option value='' defaultValue>
+                        elige una opción
+                      </option>
                       <option>Mujer</option>
                       <option>Hombre</option>
                     </select>
@@ -369,8 +394,6 @@ export function Registro() {
             </div>
 
             <div className='grid sm:flex gap-4 mt-5'>
-              
-
               <div className='w-full'>
                 <label
                   htmlFor='email_coach'
@@ -483,7 +506,9 @@ export function Registro() {
                       onChange={handleGenero_integrante_1Change}
                       className='block w-full mx-auto rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
                     >
-                      <option value='' defaultValue>elige una opción</option>
+                      <option value='' defaultValue>
+                        elige una opción
+                      </option>
                       <option>Mujer</option>
                       <option>Hombre</option>
                     </select>
@@ -501,7 +526,7 @@ export function Registro() {
                 <div className='mt-2'>
                   <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
                     <input
-                    required
+                      required
                       type='number'
                       name='edad_integrante1'
                       id='edad_integrante1'
@@ -533,8 +558,6 @@ export function Registro() {
             </div>
 
             <div className='grid sm:flex gap-4 mt-5'>
-              
-
               <div className='w-full'>
                 <label
                   htmlFor='email_integrante1'
@@ -545,7 +568,7 @@ export function Registro() {
                 <div className='mt-2'>
                   <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
                     <input
-                    required
+                      required
                       type='email'
                       name='email_integrante1'
                       id='email_integrante1'
@@ -641,13 +664,15 @@ export function Registro() {
                 <div className='mt-2'>
                   <div className='flex  mx-auto max-w-max rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
                     <select
-                    required
+                      required
                       name='genero_integrante2'
                       id='genero_integrante2'
                       onChange={handleGenero_integrante_2Change}
                       className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
                     >
-                      <option value='' defaultValue>elige una opción</option>
+                      <option value='' defaultValue>
+                        elige una opción
+                      </option>
                       <option>Mujer</option>
                       <option>Hombre</option>
                     </select>
@@ -665,7 +690,7 @@ export function Registro() {
                 <div className='mt-2'>
                   <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
                     <input
-                    required
+                      required
                       type='number'
                       name='edad_integrante2'
                       id='edad_integrante2'
@@ -697,8 +722,6 @@ export function Registro() {
             </div>
 
             <div className='grid sm:flex gap-4 mt-5'>
-              
-
               <div className='w-full'>
                 <label
                   htmlFor='email_integrante2'
@@ -811,7 +834,9 @@ export function Registro() {
                       onChange={handleGenero_integrante_3Change}
                       className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
                     >
-                      <option value='' defaultValue>elige una opción</option>
+                      <option value='' defaultValue>
+                        elige una opción
+                      </option>
                       <option>Mujer</option>
                       <option>Hombre</option>
                     </select>
@@ -861,8 +886,6 @@ export function Registro() {
             </div>
 
             <div className='grid sm:flex gap-4 mt-5'>
-              
-
               <div className='w-full'>
                 <label
                   htmlFor='email_integrante3'
@@ -886,7 +909,7 @@ export function Registro() {
             </div>
           </div>
         </div>
-
+        <p className='text-red-600 font-bold text-2xl'>{message}</p>
         <button
           type='submit'
           disabled={correcto}
