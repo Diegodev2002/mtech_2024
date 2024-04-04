@@ -14,7 +14,7 @@ app.use(
 		origin: (origin, callback) => {
 			const ACCEPTED_ORIGINS = [
 				'http://localhost:4321',
-				'https://mtech.igeco.mx/',
+				'https://mtech.igeco.mx',
 			];
 
 			if (ACCEPTED_ORIGINS.includes(origin)) {
