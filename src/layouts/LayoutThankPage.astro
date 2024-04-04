@@ -1,0 +1,28 @@
+---
+import Menu from '../components/menu.astro'
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='M-TECH 2024' />
+    <meta name='viewport' content='width=device-width' />
+    <link
+      rel='icon'
+      type='image/svg+xml'
+      href='/public/img/faviconHfmexico.png'
+    />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style></style>

@@ -1,7 +1,11 @@
 import { useState } from 'react'
 import { estados } from '../../data/constans_estados.js'
 
+import { useZustandStore } from '../../store/form-store.js'
+
 export function Registro() {
+  const { setZustandState } = useZustandStore()
+
   const [estadoSeleccionado, setEstadoSeleccionado] = useState('')
   const [message, setMessage] = useState('')
 
@@ -16,7 +20,7 @@ export function Registro() {
   const [genero2, setGeneroSeleccionado2] = useState('')
   const [genero3, setGeneroSeleccionado3] = useState('')
 
-  const handleGenero_integrante_1Change = (e) => { 
+  const handleGenero_integrante_1Change = (e) => {
     const genero_integrante1 = e.target.value
     setGeneroSeleccionado1(genero_integrante1)
   }
@@ -30,7 +34,7 @@ export function Registro() {
   }
 
   const correcto =
-    genero1 === genero2 && genero2 === genero3 && genero1 === genero3 
+    genero1 === genero2 && genero2 === genero3 && genero1 === genero3
   const buttonDisabled = correcto
     ? 'bg-gray-500 text-gray-600'
     : 'bg-blue-500 hover:bg-blue-700 text-white '
@@ -42,7 +46,6 @@ export function Registro() {
 
     if (!correcto) {
       try {
-
         const validarEquipos = await fetch(
           'http://localhost:3000/obtener-registros',
           {
@@ -55,32 +58,30 @@ export function Registro() {
         )
         const response1 = await validarEquipos.json()
         console.log(response1)
-        if(data.categoria === 'Sumo Autónomo' && response1.total < 16 
-          || data.categoria === 'M-Tech Innovations' && response1.total < 14 
-          || data.categoria === 'M-Tech Engineers' && response1.total < 14 )
-        {
-            const guardar_registro = await fetch(
-              'http://localhost:3000/guardar-registro',
-              {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-              }
-            )
-            
-            const response = await guardar_registro.json()
-            if (response.status) {
-              setMessage('Tu registro se guardo correctamente')
-             // document.getElementById('form-register').reset()
+        if (
+          (data.categoria === 'Sumo Autónomo' && response1.total < 16) ||
+          (data.categoria === 'M-Tech Innovations' && response1.total < 14) ||
+          (data.categoria === 'M-Tech Engineers' && response1.total < 14)
+        ) {
+          const guardar_registro = await fetch(
+            'http://localhost:3000/guardar-registro',
+            {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data),
             }
-        }
-        else{
+          )
+
+          const response = await guardar_registro.json()
+          if (response.status) {
+            setZustandState(true)
+            window.location.href = '/gracias-por-participar'
+          }
+        } else {
           setMessage('Error - Cupo de Equipos párticipantes lleno')
         }
-        
-       
       } catch (error) {
         console.log(error)
         setMessage('Error al guardar el registro intenta más tarde...')
