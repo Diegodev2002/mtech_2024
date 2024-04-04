@@ -16,7 +16,7 @@ export function Registro() {
   const [genero2, setGeneroSeleccionado2] = useState('')
   const [genero3, setGeneroSeleccionado3] = useState('')
 
-  const handleGenero_integrante_1Change = (e) => {
+  const handleGenero_integrante_1Change = (e) => { 
     const genero_integrante1 = e.target.value
     setGeneroSeleccionado1(genero_integrante1)
   }
@@ -30,7 +30,7 @@ export function Registro() {
   }
 
   const correcto =
-    genero1 === genero2 && genero2 === genero3 && genero1 === genero3
+    genero1 === genero2 && genero2 === genero3 && genero1 === genero3 
   const buttonDisabled = correcto
     ? 'bg-gray-500 text-gray-600'
     : 'bg-blue-500 hover:bg-blue-700 text-white '
@@ -41,10 +41,10 @@ export function Registro() {
     const data = Object.fromEntries(formData.entries())
 
     if (!correcto) {
-      console.log(data)
       try {
-        const guardar_registro = await fetch(
-          'http://localhost:3000/guardar-registro',
+
+        const validarEquipos = await fetch(
+          'http://localhost:3000/obtener-registros',
           {
             method: 'POST',
             headers: {
@@ -53,12 +53,34 @@ export function Registro() {
             body: JSON.stringify(data),
           }
         )
-        const response = await guardar_registro.json()
-        console.log(response)
-        if (response.status) {
-          setMessage('Tu registro se guardo correctamente')
-          document.getElementById('form-register').reset()
+        const response1 = await validarEquipos.json()
+        console.log(response1)
+        if(data.categoria === 'Sumo Autónomo' && response1.total < 16 
+          || data.categoria === 'M-Tech Innovations' && response1.total < 14 
+          || data.categoria === 'M-Tech Engineers' && response1.total < 14 )
+        {
+            const guardar_registro = await fetch(
+              'http://localhost:3000/guardar-registro',
+              {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+              }
+            )
+            
+            const response = await guardar_registro.json()
+            if (response.status) {
+              setMessage('Tu registro se guardo correctamente')
+             // document.getElementById('form-register').reset()
+            }
         }
+        else{
+          setMessage('Error - Cupo de Equipos párticipantes lleno')
+        }
+        
+       
       } catch (error) {
         console.log(error)
         setMessage('Error al guardar el registro intenta más tarde...')
