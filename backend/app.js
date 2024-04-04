@@ -17,8 +17,8 @@ const enviarEmail = async (mails) => {
 	const mensaje = {
 		from: 'hfairsmexico@gmail.com',
 		to: mails,
-		subject: 'Correo de pruebas',
-		text: 'prueba',
+		subject: 'M-TECH 2024 - Torneo De Robótica',
+		text:'',
 	};
 
 	const transport = nodemailer.createTransport(config);
@@ -57,7 +57,7 @@ app.post('/guardar-registro', async (req, res) => {
 		direccion,
 		cp,
 		...Integrantes
-	} = req.body;
+	} = req.body; 
 
 	const response = await RegisterModel.crear_equipo({
 		nombre_equipo,
