@@ -14,24 +14,24 @@ export class RegisterModel {
 		categoria,
 		sede,
 		nombre_escuela,
-		estado,
+		delegacion,
 		municipio,
-		direccion,
-		cp,
+		nivel,
+		cct,
 	}) {
 		const connection = await mysql.createConnection(config);
 		try {
 			const [result] = await connection.query(
-				'INSERT INTO equipos (nombre,categoria,sede,escuela,estado,municipio,direccion,cp) VALUES (?,?,?,?,?,?,?,?)',
+				'INSERT INTO equipos (nombre,categoria,sede,escuela,delegacion,municipio,nivel,cct) VALUES (?,?,?,?,?,?,?,?)',
 				[
 					nombre_equipo,
 					categoria,
 					sede,
 					nombre_escuela,
-					estado,
+					delegacion,
 					municipio,
-					direccion,
-					cp,
+					nivel,
+					cct,
 				]
 			);
 			return {
@@ -54,7 +54,7 @@ export class RegisterModel {
 		try {
 			// Insert coach
 			await connection.query(
-				'INSERT INTO integrantes (nombre, paterno, materno, genero, edad, telefono, email, id_equipo) VALUES (?, ?, ?, ?, ?, ?, ?,?)',
+				'INSERT INTO integrantes (nombre, paterno, materno, genero, edad, telefono, email, curp, rfc, grado_escolar, id_equipo) VALUES (?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?)',
 				[
 					data.nombre_coach,
 					data.paterno_coach,
@@ -63,13 +63,16 @@ export class RegisterModel {
 					data.edad_coach,
 					data.telefono_coach,
 					data.email_coach,
+					data.curp_coach,
+					data.rfc_coach,
+					data.grado_coach,
 					id_equipo,
 				]
 			);
 
 			// Insert integrante1
 			await connection.query(
-				'INSERT INTO integrantes (nombre, paterno, materno, genero, edad, telefono, email, id_equipo) VALUES (?, ?, ?, ?, ?, ?, ?,?)',
+				'INSERT INTO integrantes (nombre, paterno, materno, genero, edad, telefono, email, curp, rfc, grado_escolar, id_equipo) VALUES (?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?)',
 				[
 					data.nombre_integrante1,
 					data.paterno_integrante1,
@@ -78,13 +81,16 @@ export class RegisterModel {
 					data.edad_integrante1,
 					data.telefono_integrante1,
 					data.email_integrante1,
+					data.curp_integrante1,
+					data.rfc_integrante1,
+					data.grado_integrante1,
 					id_equipo,
 				]
 			);
 
 			// Insert integrante2
 			await connection.query(
-				'INSERT INTO integrantes (nombre, paterno, materno, genero, edad, telefono, email, id_equipo) VALUES (?, ?, ?, ?, ?, ?, ?,?)',
+				'INSERT INTO integrantes (nombre, paterno, materno, genero, edad, telefono, email, curp, rfc, grado_escolar, id_equipo) VALUES (?, ?, ?, ?, ?, ?, ?,? ,?, ?, ?)',
 				[
 					data.nombre_integrante2,
 					data.paterno_integrante2,
@@ -93,13 +99,16 @@ export class RegisterModel {
 					data.edad_integrante2,
 					data.telefono_integrante2,
 					data.email_integrante2,
+					data.curp_integrante2,
+					data.rfc_integrante2,
+					data.grado_integrante2,
 					id_equipo,
 				]
 			);
 
 			// Insert integrante3
 			await connection.query(
-				'INSERT INTO integrantes (nombre, paterno, materno, genero, edad, telefono, email, id_equipo) VALUES (?, ?, ?, ?, ?, ?, ?,?)',
+				'INSERT INTO integrantes (nombre, paterno, materno, genero, edad, telefono, email, curp, rfc, grado_escolar, id_equipo) VALUES (?, ?, ?, ?, ?, ?, ?,? ,?, ?, ?)',
 				[
 					data.nombre_integrante3,
 					data.paterno_integrante3,
@@ -108,6 +117,9 @@ export class RegisterModel {
 					data.edad_integrante3,
 					data.telefono_integrante3,
 					data.email_integrante3,
+					data.curp_integrante3,
+					data.rfc_integrante3,
+					data.grado_integrante3,
 					id_equipo,
 				]
 			);

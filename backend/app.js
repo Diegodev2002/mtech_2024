@@ -35,22 +35,22 @@ app.post('/guardar-registro', async (req, res) => {
 		categoria,
 		sede,
 		nombre_escuela,
-		estado,
+		delegacion,
 		municipio,
-		direccion,
-		cp,
+		nivel,
+		cct,
 		...Integrantes
 	} = req.body; 
 
 	const response = await RegisterModel.crear_equipo({
 		nombre_equipo,
-		categoria,
 		sede,
+		categoria,		
 		nombre_escuela,
-		estado,
+		delegacion,
 		municipio,
-		direccion,
-		cp,
+		nivel,
+		cct,
 	});
 
 	if (response.status) {

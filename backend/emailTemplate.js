@@ -13,7 +13,8 @@ export const emailTemplate = (nombres, nombre_equipo, sede, categoria, id)=>{
             <h2>Información del equipo:</h2>
             <p> Folio de registro: F - 000${id}</p>
             <p>Nombre del equipo: ${nombre_equipo}</p>
-            <p>Sede de participación: ${sede}${categoria} </p>                                                                                         
+            <p>Sede de participación: ${sede} </p> 
+            <p>Categoría: ${categoria}</p>                                                                                        
         </div>
     `
 }
