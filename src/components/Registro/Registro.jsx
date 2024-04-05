@@ -47,7 +47,7 @@ export function Registro() {
     if (!correcto) {
       try {
         const validarEquipos = await fetch(
-          'http://localhost:3000/obtener-registros',
+          'https://mtech.igeco.mx/backend/obtener-registros',
           {
             method: 'POST',
             headers: {
@@ -64,7 +64,7 @@ export function Registro() {
           (data.categoria === 'M-Tech Engineers' && response1.total < 14)
         ) {
           const guardar_registro = await fetch(
-            'http://localhost:3000/guardar-registro',
+            'https://mtech.igeco.mx/backend/guardar-registro',
             {
               method: 'POST',
               headers: {
