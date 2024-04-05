@@ -113,7 +113,7 @@ async function enviarEmail(mails, nombres, nombre_equipo, sede, categoria, id ) 
 	};
 
 	const transport = nodemailer.createTransport(config);
-	const info = await transport.sendMail(mensaje);	
+	await transport.sendMail(mensaje);	
 }
 
 app.listen(process.env.PORT, () => {
