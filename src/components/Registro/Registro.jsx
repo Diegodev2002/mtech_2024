@@ -6,7 +6,7 @@ import { useZustandStore } from '../../store/form-store.js'
 export function Registro() {
   const { setZustandState } = useZustandStore()
 
-  const [estadoSeleccionado, setEstadoSeleccionado] = useState('')
+  const [estadoSeleccionado, setEstadoSeleccionado] = useState('Guanajuato')
   const [message, setMessage] = useState('')
 
   const handleEstadoChange = (event) => {
@@ -85,14 +85,18 @@ export function Registro() {
       } catch (error) {
         console.log(error)
         setMessage('Error al guardar el registro intenta más tarde...')
-        document.getElementById('form-register').reset()
+        //document.getElementById('form-register').reset()
       }
+    } else {
+      setMessage('El equipo debe de ser genero mixto...')
     }
   }
 
   return (
-    <div className='text-white font-bold text-center bg-slate-700 p-5 rounded-2xl'>
-      <p className='text-2xl'>REGISTRATE</p>
+    <div className='text-white font-bold backdrop-blur-4xl bg-white/10 text-center bg-blur-md p-5 rounded-2xl'>
+      <p className='text-2xl' style={{ textShadow: '0px 0px 15px white' }}>
+        REGÍSTRATE
+      </p>
 
       <p className='mt-10'>Captura los datos de tu equipo</p>
       <form onSubmit={handleSubmit} className='mt-5' id='form-register'>
@@ -127,7 +131,7 @@ export function Registro() {
               className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
             >
               <option value='' defaultValue>
-                elige una sede
+                Elige una sede
               </option>
               <option>Silao - UPIIG</option>
               <option>Valle de Santiago - UTSOE</option>
@@ -142,7 +146,7 @@ export function Registro() {
               className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
             >
               <option value='' defaultValue>
-                elige una categoría
+                Elige una categoría
               </option>
               <option>Sumo Autónomo</option>
               <option>M-Tech Innovations</option>
@@ -172,20 +176,20 @@ export function Registro() {
               </div>
             </div>
           </div>
-          <div className='w-full'>
+          <div>
             <label
-              htmlFor='direccion'
+              htmlFor='delegacion'
               className='block text-sm font-medium leading-6'
             >
-              Dirección
+              Delegación
             </label>
             <div className='mt-2'>
               <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 w-full'>
                 <input
                   type='text'
-                  name='direccion'
-                  id='direccion'
-                  autoComplete='direccion'
+                  name='delegacion'
+                  id='delegacion'
+                  autoComplete='delegacion'
                   required
                   className='block flex-1 border-0 bg-transparent py-1.5 px-4 focus:ring-0 sm:text-sm sm:leading-6'
                 />
@@ -195,34 +199,6 @@ export function Registro() {
         </div>
 
         <div className='grid lg:flex gap-4 mt-5 mx-8 justify-center'>
-          <div className='lg:col-span-2'>
-            <label
-              htmlFor='estado'
-              className='block text-sm font-medium leading-6 text-white'
-            >
-              Estado
-            </label>
-            <div className='mt-2'>
-              <select
-                name='estado'
-                id='estado'
-                autoComplete='address-level1'
-                className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
-                onChange={handleEstadoChange}
-                required
-              >
-                <option value='' defaultValue>
-                  ----Selecciona un estado-----
-                </option>
-                {Object.keys(estados).map((estado, index) => (
-                  <option key={index} value={estado}>
-                    {estado}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-
           <div className='lg:col-span-2  sm:col-start-1'>
             <label
               htmlFor='municipio'
@@ -253,18 +229,39 @@ export function Registro() {
 
           <div className='lg:col-span-2'>
             <label
-              htmlFor='cp'
+              htmlFor='nivel'
               className='block text-sm font-medium leading-6 text-white'
             >
-              ZIP / Codigo postal
+              Nivel
             </label>
             <div className='mt-2'>
               <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 w-full'>
                 <input
                   type='text'
-                  name='cp'
-                  id='cp'
-                  autoComplete='cp'
+                  name='nivel'
+                  id='nivel'
+                  autoComplete='nivel'
+                  required
+                  className='block flex-1 border-0 bg-transparent py-1.5 px-4 focus:ring-0 sm:text-sm sm:leading-6'
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className='lg:col-span-2'>
+            <label
+              htmlFor='cct'
+              className='block text-sm font-medium leading-6 text-white'
+            >
+              CCT
+            </label>
+            <div className='mt-2'>
+              <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 w-full'>
+                <input
+                  type='text'
+                  name='cct'
+                  id='cct'
+                  autoComplete='cct'
                   required
                   className='block flex-1 border-0 bg-transparent py-1.5 px-4 focus:ring-0 sm:text-sm sm:leading-6'
                 />
@@ -276,11 +273,11 @@ export function Registro() {
 
         <div className='grid lg:flex gap-4 justify-center lg:justify-between mt-10 lg:mt-20'>
           <p className='mx-auto text-xl'>
-            Captura los datos de los Integrantes <br />
+            Coach <br />
             <span className='mx-auto font-normal text-xs'>
-              Registra a tu equipo, el equipo debe de estar integrado por un
-              coach, 3 integrantes y debe de ser de genero mixto (2 mujeres y 1
-              hombre o 2 hombres y una mujer)
+              Para registrar a tu equipo debes considerar lo siguiente: El
+              equipo debe de estar conformado por 3 integrantes de genero mixto
+              (2 mujeres y 1 hombre) o (2 hombres y 1 mujer).
             </span>
           </p>
           <div>
@@ -290,7 +287,7 @@ export function Registro() {
                   htmlFor='nombre_coach'
                   className='block text-sm font-medium leading-6'
                 >
-                  Nombre del Coach
+                  Nombre
                 </label>
                 <div className='mt-2'>
                   <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
@@ -437,6 +434,49 @@ export function Registro() {
                   </div>
                 </div>
               </div>
+              <div>
+                <p>Grado Escolar</p>
+                <div className='mt-2'>
+                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                    <input
+                      type='text'
+                      name='grado_coach'
+                      autoComplete='grado_coach'
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className='mt-10 grid md:flex gap-5'>
+              <div>
+                <p>CURP</p>
+                <div className='mt-2'>
+                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                    <input
+                      type='text'
+                      name='curp_coach'
+                      autoComplete='curp_coach'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p>RFC</p>
+                <div className='mt-2'>
+                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                    <input
+                      type='text'
+                      name='rfc_coach'
+                      autoComplete='rfc_coach'
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -444,7 +484,7 @@ export function Registro() {
 
         <div className='grid lg:flex gap-4  lg:justify-between mt-10 lg:mt-20'>
           <p className='mx-auto text-xl'>
-            Captura datos del integrante 1 <br />
+            Lider del equipo <br />
           </p>
           <div>
             <div className='grid lg:flex gap-4'>
@@ -601,6 +641,49 @@ export function Registro() {
                   </div>
                 </div>
               </div>
+              <div>
+                <p>Grado Escolar</p>
+                <div className='mt-2'>
+                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                    <input
+                      type='text'
+                      name='grado_integrante1'
+                      autoComplete='grado_integrante1'
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className='mt-10 grid md:flex gap-5'>
+              <div>
+                <p>CURP</p>
+                <div className='mt-2'>
+                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                    <input
+                      type='text'
+                      name='curp_integrante1'
+                      autoComplete='curp_integrante1'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p>RFC</p>
+                <div className='mt-2'>
+                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                    <input
+                      type='text'
+                      name='rfc_integrante1'
+                      autoComplete='rfc_integrante1'
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -608,7 +691,7 @@ export function Registro() {
 
         <div className='grid lg:flex gap-4 lg:justify-between mt-10 lg:mt-20'>
           <p className='mx-auto text-xl'>
-            Captura datos del integrante 2 <br />
+            Integrante <br />
           </p>
           <div>
             <div className='grid lg:flex gap-4'>
@@ -765,6 +848,50 @@ export function Registro() {
                   </div>
                 </div>
               </div>
+
+              <div>
+                <p>Grado Escolar</p>
+                <div className='mt-2'>
+                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                    <input
+                      type='text'
+                      name='grado_integrante2'
+                      autoComplete='grado_integrante2'
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className='mt-10 grid md:flex gap-5'>
+              <div>
+                <p>CURP</p>
+                <div className='mt-2'>
+                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                    <input
+                      type='text'
+                      name='curp_integrante2'
+                      autoComplete='curp_integrante2'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p>RFC</p>
+                <div className='mt-2'>
+                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                    <input
+                      type='text'
+                      name='rfc_integrante2'
+                      autoComplete='rfc_integrante2'
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -772,7 +899,8 @@ export function Registro() {
 
         <div className='grid lg:flex gap-4 lg:justify-between mt-10 lg:mt-20'>
           <p className='mx-auto text-xl '>
-            Captura datos del integrante 3 <br />
+            Integrante
+            <br />
           </p>
           <div>
             <div className='grid lg:flex gap-4'>
@@ -924,6 +1052,50 @@ export function Registro() {
                       id='email_integrante3'
                       autoComplete='email_integrante3'
                       required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <p>Grado Escolar</p>
+                <div className='mt-2'>
+                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                    <input
+                      type='text'
+                      name='grado_integrante3'
+                      autoComplete='grado_integrante3'
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className='mt-10 grid md:flex gap-5'>
+              <div>
+                <p>CURP</p>
+                <div className='mt-2'>
+                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                    <input
+                      type='text'
+                      name='curp_integrante3'
+                      autoComplete='curp_integrante3'
+                      required
+                      className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p>RFC</p>
+                <div className='mt-2'>
+                  <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600'>
+                    <input
+                      type='text'
+                      name='rfc_integrante3'
+                      autoComplete='rfc_integrante3'
                       className='block flex-1 border-0 bg-transparent py-1.5 px-3 focus:ring-0 sm:text-sm sm:leading-6'
                     />
                   </div>
