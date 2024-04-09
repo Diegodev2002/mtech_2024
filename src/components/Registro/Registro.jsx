@@ -39,6 +39,15 @@ export function Registro() {
     ? 'bg-gray-500 text-gray-600'
     : 'bg-blue-500 hover:bg-blue-700 text-white '
 
+    const [categorias, setcategoria] = useState('')
+    const handleCategoriaChange = (e) => {
+    const categoria = e.target.value
+    setcategoria(categoria)
+  }
+  
+  const requeri = categorias === 'Sumo Autónomo'  ? 'hidden' : ''
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     const formData = new FormData(e.target)
@@ -47,7 +56,7 @@ export function Registro() {
     if (!correcto) {
       try {
         const validarEquipos = await fetch(
-          'https://mtech.igeco.mx/backend/obtener-registros',
+          'http://mtech.igeco.mx/backend/obtener-registros',
           {
             method: 'POST',
             headers: {
@@ -143,6 +152,7 @@ export function Registro() {
             <select
               name='categoria'
               required
+              onChange={handleCategoriaChange}
               className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
             >
               <option value='' defaultValue>
@@ -155,7 +165,7 @@ export function Registro() {
           </div>
         </div>
 
-        <div className='grid sm:flex gap-4 place-content-center mt-5 mx-8'>
+        <div className='grid sm:flex gap-2 place-content-center mt-5 mx-2'>
           <div>
             <label
               htmlFor='nombre_escuela'
@@ -183,7 +193,7 @@ export function Registro() {
             >
               Delegación
             </label>
-            <div className='mt-2'>
+            <div className='mt-2 '>
               <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 w-full'>
                 <input
                   type='text'
@@ -192,6 +202,25 @@ export function Registro() {
                   autoComplete='delegacion'
                   required
                   className='block flex-1 border-0 bg-transparent py-1.5 px-4 focus:ring-0 sm:text-sm sm:leading-6'
+                />
+              </div>
+            </div>
+          </div>
+          <div className={`${requeri}  min-h-min truncate`}>
+            <label
+              htmlFor='requerimiento'
+              className='block text-sm font-medium leading-6'
+            >
+              Requerimiento
+            </label> 
+            <div className='mt-2 w-96 '>
+              <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 w-full'>
+                <input
+                  type='text'
+                  name='requerimiento'
+                  id='requerimiento'
+                  autoComplete='requerimiento'
+                  className='block flex-1 border-0 bg-transparent py-1.5 px-4 focus:ring-0 sm:text-sm sm:leading-6 min-h-min truncate'
                 />
               </div>
             </div>

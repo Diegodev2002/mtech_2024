@@ -3,11 +3,9 @@ import cors from 'cors';
 import pkg from 'body-parser';
 import { RegisterModel } from './db.js';
 import nodemailer from 'nodemailer';
-import {emailTemplate} from './emailTemplate.js'
+import { emailTemplate } from './emailTemplate.js';
 const { json } = pkg;
 const app = express();
-
-
 
 app.use(
 	cors({
@@ -36,18 +34,20 @@ app.post('/guardar-registro', async (req, res) => {
 		sede,
 		nombre_escuela,
 		delegacion,
+		requerimiento,
 		municipio,
 		nivel,
 		cct,
 		...Integrantes
-	} = req.body; 
+	} = req.body;
 
 	const response = await RegisterModel.crear_equipo({
 		nombre_equipo,
 		sede,
-		categoria,		
+		categoria,
 		nombre_escuela,
 		delegacion,
+		requerimiento,
 		municipio,
 		nivel,
 		cct,
@@ -67,14 +67,37 @@ app.post('/guardar-registro', async (req, res) => {
 			];
 
 			let nombres = [
-				Integrantes.nombre_coach+ ' ' + Integrantes.paterno_coach + ' ' + Integrantes.materno_coach,
-				Integrantes.nombre_integrante1 + ' ' + Integrantes.paterno_integrante1 + ' ' + Integrantes.materno_integrante1,
-				Integrantes.nombre_integrante2 + ' ' + Integrantes.paterno_integrante2 + ' ' + Integrantes.materno_integrante2,
-				Integrantes.nombre_integrante3 + ' ' + Integrantes.paterno_integrante3 + ' ' + Integrantes.materno_integrante3,
+				Integrantes.nombre_coach +
+					' ' +
+					Integrantes.paterno_coach +
+					' ' +
+					Integrantes.materno_coach,
+				Integrantes.nombre_integrante1 +
+					' ' +
+					Integrantes.paterno_integrante1 +
+					' ' +
+					Integrantes.materno_integrante1,
+				Integrantes.nombre_integrante2 +
+					' ' +
+					Integrantes.paterno_integrante2 +
+					' ' +
+					Integrantes.materno_integrante2,
+				Integrantes.nombre_integrante3 +
+					' ' +
+					Integrantes.paterno_integrante3 +
+					' ' +
+					Integrantes.materno_integrante3,
 			];
 
 			for (let i = 0; mails[i]; i++) {
-				enviarEmail(mails[i], nombres[i], nombre_equipo, sede, categoria, response.insertId);
+				enviarEmail(
+					mails[i],
+					nombres[i],
+					nombre_equipo,
+					sede,
+					categoria,
+					response.insertId
+				);
 			}
 			res.json({ response, status: true });
 		} else {
@@ -97,8 +120,7 @@ app.post('/obtener-registros', async (req, res, next) => {
 	next();
 });
 
-
-async function enviarEmail(mails, nombres, nombre_equipo, sede, categoria, id ) {
+async function enviarEmail(mails, nombres, nombre_equipo, sede, categoria, id) {
 	const config = {
 		host: process.env.SMTP_GMAIL,
 		port: process.env.PORT_GMAIL,
@@ -113,7 +135,7 @@ async function enviarEmail(mails, nombres, nombre_equipo, sede, categoria, id ) 
 	};
 
 	const transport = nodemailer.createTransport(config);
-	await transport.sendMail(mensaje);	
+	await transport.sendMail(mensaje);
 }
 
 app.listen(process.env.PORT, () => {

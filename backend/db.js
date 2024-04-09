@@ -15,6 +15,7 @@ export class RegisterModel {
 		sede,
 		nombre_escuela,
 		delegacion,
+		requerimiento,
 		municipio,
 		nivel,
 		cct,
@@ -22,13 +23,14 @@ export class RegisterModel {
 		const connection = await mysql.createConnection(config);
 		try {
 			const [result] = await connection.query(
-				'INSERT INTO equipos (nombre,categoria,sede,escuela,delegacion,municipio,nivel,cct) VALUES (?,?,?,?,?,?,?,?)',
+				'INSERT INTO equipos (nombre,categoria,sede,escuela,delegacion,requerimiento,municipio,nivel,cct) VALUES (?,?,?,?,?,?,?,?,?)',
 				[
 					nombre_equipo,
 					categoria,
 					sede,
 					nombre_escuela,
 					delegacion,
+					requerimiento,
 					municipio,
 					nivel,
 					cct,
@@ -37,7 +39,7 @@ export class RegisterModel {
 			return {
 				status: true,
 				insertId: result.insertId,
-				...result,
+				...result,	
 			};
 		} catch (error) {
 			console.log(error);
