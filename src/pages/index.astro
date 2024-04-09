@@ -14,7 +14,13 @@ import Layout from '../layouts/Layout.astro'
     >
       <source src='../videos/bg_mtech_2024.mp4' type='video/mp4' />
     </video>
-    <img class='pt-10' src='/img/logoMtech2024.webp' alt='Mtech 2024' />
+    <img
+      class='pt-10 w-full sm:w-[500px]'
+      src='/img/logoMtech2024.webp'
+      alt='Mtech 2024'
+      width='500'
+      height='524'
+    />
   </section>
   <section class='Mtech_info py-10'>
     <div class='container mx-auto px-4'>
@@ -39,85 +45,98 @@ import Layout from '../layouts/Layout.astro'
         </div>
       </div>
       <div
-        class='block sm:grid grid-cols-2 items-center gap-2 md:gap-16 text-white text-center text-sm sm:text-xl my-10'
+        class='grid sm:grid-cols-2 items-center gap-10 md:gap-16 text-white text-center text-sm sm:text-xl my-10'
       >
-        <div class='flex py-2'>
-          <div
-            class='box_41 border-[#FFFDFF] border-[4px] rounded-[35px] max-w-fit md:w-[470px] px-10 py-5 mx-auto m-auto'
-          >
-            Entonces
-            <p class='text-xl py-3 sm:text-3xl font-extrabold'>
-              M-Tech 2024 es para ti!
-            </p>Desafía al futuro y demuestra tu talento en la tercera edición
-            de la competencia de robótica que el Gobierno del Estado de
-            Guanajuato e Italian German Exhibition Company Mexico que organizan
-            para ti
-          </div>
-        </div>
-        <div>
-          <video class='relative object-right object-cover w-[90vw]' controls>
-            <source src='/videos/final_mtech_2023.mp4' type='video/mp4' />
-          </video>
-        </div>
-        <div>
-          <video src='/videos/robot_mtech_1.webm' loop autoplay playsinline>
-          </video>
-        </div>
         <div
-          class='flex box_4 border-[#FFFDFF] border-[4px] rounded-[35px] max-w-fit md:w-[500px] align-center m-auto'
+          class='box_41 border-[#FFFDFF] border-[4px] rounded-[35px] max-w-fit md:w-[470px] px-10 py-5 mx-auto m-auto'
         >
-          <p class='px-10 py-5 max-h-fit'>
-            Las categorías de M-Tech 2024 te permitirán sobrepasar los límites
-            de tu imaginación, poner a prueba tus habilidades en robótica, crear
-            innovaciones y potenciar tus habilidades blandas
-          </p>
+          <p class='text-xl py-3 sm:text-3xl font-extrabold'>
+            Entonces <br />M-Tech 2024 es para ti!
+          </p>Desafía al futuro y demuestra tu talento en la tercera edición de
+          la competencia de robótica que el Gobierno del Estado de Guanajuato e
+          Italian German Exhibition Company Mexico que organizan para ti
         </div>
-      </div>
-      <a
-        class='conv border-2 border-white max-w-max text-[1rem] sm:text-[2rem] text-white font-bold flex justify-center items-center mx-auto py-5 px-10 rounded-2xl'
-        href='/files/Convocatoria-M-TECH-2024-v2_compressed.pdf'
-        target='_blank'
-      >
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          viewBox='0 0 24 24'
-          fill='currentColor'
-          class='w-10 h-10 pr-3'
-        >
-          <path
-            fill-rule='evenodd'
-            d='M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625ZM7.5 15a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 7.5 15Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H8.25Z'
-            clip-rule='evenodd'></path>
-          <path
-            d='M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z'
-          ></path>
-        </svg>
-        CONVOCATORIA
-      </a>
-      <div>
-        <h2 class='py-10'>CATEGORÍAS</h2>
-        <div
-          class='relative px-auto mx-auto sm:grid grid-cols-2 my-2 place-items-center text-white text-center font-bold'
-        >
-          <div
-            class='box_5 block mx-auto md:absolute md:right-1/2 border-[#FFFDFF] border-[4px] rounded-[35px] w-[300px] md:w-[350px] lg:w-[500px] py-5 lg:py-14 px-10 text-sm md:text-xl'
-          >
-            <a
-              href='/files/Reglamento-Sumo-Autónomo-v1_compressed.pdf'
-              target='_blank'
-            >
-              <h3 class='text-[#FF44CC] font-bold text-xl md:text-3xl p-3'>
-                SUMO AUTÓNOMO
-              </h3>
-              Consiste en crear un robot autónomo para combatir en un área de lucha
-              denominada Dojo.<br /><br />
-              <span class='text-[#00FFFF]'>Nivel educativo: Secundaria</span>
-            </a>
-          </div>
 
+        <video
+          class='relative object-right object-cover w-[90vw]'
+          controls
+          poster='/img/bg-video-mtech-promocional.webp'
+        >
+          <source src='/videos/final_mtech_2023.mp4' type='video/mp4' />
+        </video>
+      </div>
+      <div class='items-center grid sm:grid-cols-2'>
+        <video loop autoplay playsinline>
+          <source src='/videos/robot_mtech_1.webm' />
+          <source src='/videos/robot_mtech_1.mov' />
+        </video>
+        <p
+          class='box_4 border-[#FFFDFF] border-[4px] rounded-[35px] px-10 py-10 text-white text-xl text-center'
+        >
+          Las categorías de M-Tech 2024 te permitirán sobrepasar los límites de
+          tu imaginación, poner a prueba tus habilidades en robótica, crear
+          innovaciones y potenciar tus habilidades blandas
+        </p>
+      </div>
+    </div>
+    <a
+      class='mt-10 conv border-2 border-white max-w-max text-[1rem] sm:text-[2rem] text-white font-bold flex justify-center items-center mx-auto py-5 px-10 rounded-2xl'
+      href='/files/Convocatoria-M-TECH-2024-v2_compressed.pdf'
+      target='_blank'
+    >
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 24 24'
+        fill='currentColor'
+        class='w-10 h-10 pr-3'
+      >
+        <path
+          fill-rule='evenodd'
+          d='M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625ZM7.5 15a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 7.5 15Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H8.25Z'
+          clip-rule='evenodd'></path>
+        <path
+          d='M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z'
+        ></path>
+      </svg>
+      CONVOCATORIA
+    </a>
+    <div>
+      <h2 class='py-10'>CATEGORÍAS</h2>
+      <div
+        class='relative px-auto mx-auto sm:grid grid-cols-2 my-2 place-items-center text-white text-center font-bold'
+      >
+        <div
+          class='box_5 block mx-auto md:absolute md:right-1/2 border-[#FFFDFF] border-[4px] rounded-[35px] w-[300px] md:w-[350px] lg:w-[500px] py-5 lg:py-14 px-10 text-sm md:text-xl'
+        >
+          <a
+            href='/files/Reglamento-Sumo-Autónomo-v1_compressed.pdf'
+            target='_blank'
+          >
+            <h3 class='text-[#FF44CC] font-bold text-xl md:text-3xl p-3'>
+              SUMO AUTÓNOMO
+            </h3>
+            Consiste en crear un robot autónomo para combatir en un área de lucha
+            denominada Dojo.<br /><br />
+            <span class='text-[#00FFFF]'>Nivel educativo: Secundaria</span>
+          </a>
+        </div>
+
+        <video
+          class='hidden sm:grid h-[150px] sm:h-[400px] col-start-2 py-2'
+          src='/videos/mtech_robot_left.webm'
+          muted
+          loop
+          autoplay
+          playsinline
+        >
+        </video>
+      </div>
+      <div
+        class='container mx-auto block sm:grid grid-cols-2 items-center gap-16 text-white text-center text-sm md:text-xl my-5 ms:my-10 font-bold order-1'
+      >
+        <div class='order-1'>
           <video
-            class='hidden sm:grid h-[150px] sm:h-[400px] col-start-2 py-2'
-            src='/videos/mtech_robot_left.webm'
+            src='/videos/mtech_robot_kungfu.webm'
             muted
             loop
             autoplay
@@ -126,427 +145,405 @@ import Layout from '../layouts/Layout.astro'
           </video>
         </div>
         <div
-          class='container mx-auto block sm:grid grid-cols-2 items-center gap-16 text-white text-center text-sm md:text-xl my-5 ms:my-10 font-bold order-1'
+          class='box_51 border-[#FFFDFF] border-[4px] py-5 rounded-[35px] max-w-fit md:w-[470px] px-10 mx-auto m-5 md:m-auto order-2'
         >
-          <div class='order-1'>
-            <video
-              src='/videos/mtech_robot_kungfu.webm'
-              muted
-              loop
-              autoplay
-              playsinline
-            >
-            </video>
-          </div>
-          <div
-            class='box_51 border-[#FFFDFF] border-[4px] py-5 rounded-[35px] max-w-fit md:w-[470px] px-10 mx-auto m-5 md:m-auto order-2'
+          <a
+            href='/files/Reglamento-M-Tech-Innovations-v3_compressed.pdf'
+            target='_blank'
           >
-            <a
-              href='/files/Reglamento-M-Tech-Innovations-v3_compressed.pdf'
-              target='_blank'
-            >
-              <h3 class='text-[#FF44CC] font-bold text-xl md:text-3xl'>
-                M-TECH INNOVATIONS
-              </h3>
-              Consiste en desarrollar un proyecto robótico que optimice actividades
-              cotidianas y/o ayude a problemáticas del mundo real.<br /><br />
-              <span class='text-[#00FFFF]'>Nivel Educativo: Media Superior</span
-              >
-            </a>
-          </div>
-          <div class='order-4'>
-            <video
-              src='/videos/mtech_robot_fallen.webm '
-              muted
-              loop
-              autoplay
-              playsinline
-            >
-            </video>
-          </div>
+            <h3 class='text-[#FF44CC] font-bold text-xl md:text-3xl'>
+              M-TECH INNOVATIONS
+            </h3>
+            Consiste en desarrollar un proyecto robótico que optimice actividades
+            cotidianas y/o ayude a problemáticas del mundo real.<br /><br />
+            <span class='text-[#00FFFF]'>Nivel Educativo: Media Superior</span>
+          </a>
+        </div>
+        <div class='order-4'>
+          <video
+            src='/videos/mtech_robot_fallen.webm '
+            muted
+            loop
+            autoplay
+            playsinline
+          >
+          </video>
+        </div>
 
-          <div
-            class='box_52 order-3 border-[#FFFDFF] border-[4px] py-5 rounded-[35px] max-w-fit md:w-[470px] px-10 mx-auto m-auto'
+        <div
+          class='box_52 order-3 border-[#FFFDFF] border-[4px] py-5 rounded-[35px] max-w-fit md:w-[470px] px-10 mx-auto m-auto'
+        >
+          <a
+            href='/files/Reglamento-M-Tech-Engineers-v2_compressed.pdf'
+            target='_blank'
           >
-            <a
-              href='/files/Reglamento-M-Tech-Engineers-v2_compressed.pdf'
-              target='_blank'
-            >
-              <h3 class='text-[#FF44CC] font-bold text-xl md:text-3xl'>
-                M-TECH ENGINEERS
-              </h3>
-              Consiste en desarrollar un proyecto robótico donde aplicaras tus habilidades
-              STEM, para brindar soluciones, optimas al mundo real.<br /><br />
-              <span class='text-[#00FFFF]'>Nivel Educativo: Superior</span>
-            </a>
-          </div>
+            <h3 class='text-[#FF44CC] font-bold text-xl md:text-3xl'>
+              M-TECH ENGINEERS
+            </h3>
+            Consiste en desarrollar un proyecto robótico donde aplicaras tus habilidades
+            STEM, para brindar soluciones, optimas al mundo real.<br /><br />
+            <span class='text-[#00FFFF]'>Nivel Educativo: Superior</span>
+          </a>
         </div>
-      </div>
-      <div class='py-auto sm:py-10' id='registro'>
-        <h2>SEDES</h2>
-        <div class='grid lg:flex gap-4 justify-center m-4'>
-          <div class='flip-card'>
-            <div class='flip-card-inner'>
-              <div
-                class='flip-card-front border-[#A8A8AB] border-[4px] rounded-xl'
-              >
-                <div
-                  class='w-[300px] h-[200px] text-white grid place-content-center text-2xl'
-                >
-                  <p>14 de mayo 2024<br />Silao</p>
-                </div>
-              </div>
-              <div
-                class='flip-card-back border-[#A8A8AB] border-[4px] rounded-xl w-[300px] h-[200px] text-white grid place-content-center text-2xl'
-              >
-                <p>
-                  Unidad Profesional Interdisciplinaria de Ingeniería Campus
-                  Guanajuato.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class='flip-card'>
-            <div class='flip-card-inner'>
-              <div
-                class='flip-card-front1 border-[#A8A8AB] border-[4px] rounded-xl'
-              >
-                <div
-                  class='w-[300px] h-[200px] text-white grid place-content-center text-2xl'
-                >
-                  <p>23 de mayo 2024 <br />Valle de Santiago</p>
-                </div>
-              </div>
-              <div
-                class='flip-card-back1 border-[#A8A8AB] border-[4px] rounded-xl w-[300px] h-[200px] text-white grid place-content-center text-2xl'
-              >
-                <p>Universidad Tecnológica del Suroeste de Guanajuato.</p>
-              </div>
-            </div>
-          </div>
-          <div class='flip-card'>
-            <div class='flip-card-inner'>
-              <div
-                class='flip-card-front2 border-[#A8A8AB] border-[4px] rounded-xl'
-              >
-                <div
-                  class='w-[300px] h-[200px] text-white grid place-content-center text-2xl'
-                >
-                  <p>30 de mayo 2024<br />Purísima del Rincón</p>
-                </div>
-              </div>
-              <div
-                class='flip-card-back2 border-[#A8A8AB] border-[4px] rounded-xl w-[300px] h-[200px] text-white grid place-content-center text-2xl'
-              >
-                <p>Instituto Tecnológico Superior de Purísima del Rincón.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Registro client:only />
-      <div class='py-2 md:py-10'>
-        <h2>ORGANIZADO POR:</h2>
-        <div class='container grid lg:flex justify-center pt-16 gap-6 mx-auto'>
-          <img src='../img/logo_igeco.webp' alt='Logotipo Igeco' />
-          <img src='../img/Logo_messe.webp' alt='Logotipo Messe' />
-        </div>
-      </div>
-      <div class='py-10 pb-16 items-center flex flex-col justify-center'>
-        <h2>ALIADOS ESTRATÉGICOS</h2>
-        <img
-          src='../img/logotipo_guanajuato.webp'
-          alt='Logotipo Igeco'
-          class='pt-10 w-[550px]'
-        />
-      </div>
-      <div
-        class='baner grid grid-cols-2 place-items-center md:justify-around md:flex max-h-fit gap-2 xl:max-h-[140px] p-5'
-      >
-        <img
-          src='../img/logo_igeco.webp'
-          alt='logotipo igeco'
-          class='w-[150px]'
-        />
-        <img
-          src='../img/Logo_messe.webp'
-          alt='Logotipo Messe'
-          class='w-[150px]'
-        />
-        <img
-          src='../img/logotipo_guanajuato.webp'
-          alt='Logotipo Igeco'
-          class='w-[150px]'
-        />
-        <img
-          src='../img/logoMtech2024.webp'
-          alt='Mtech 2024'
-          class='w-[70px]'
-        />
-      </div>
-      <div
-        class='block my-auto sm:flex sm:justify-center gap-10 sm:gap-24 py-4 ms:py-16 text-white text-center'
-      >
-        <img
-          class='rounded-full max-w-max h-60 mx-auto sm:mx-0 sm:my-auto'
-          src='../img/img_Leimy_Jimenez.webp'
-          alt='Leimy Jimenez'
-        />
-        <div class='py-4'>
-          <p>REDES SOCIALES<br />M-TECH</p>
-          <div class='flex justify-center gap-2 py-10 px-7 mx-auto'>
-            <a
-              href='https://www.facebook.com/FuturisticMindsMx/'
-              target='_blank'
-            >
-              <svg
-                class='fill-white h-8'
-                role='img'
-                viewBox='0 0 24 24'
-                xmlns='http://www.w3.org/2000/svg'
-                ><title>Facebook</title><path
-                  d='M24 12.073c0-6.27-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z'
-                ></path></svg
-              >
-            </a>
-            <a
-              href='https://www.instagram.com/futuristicmindsmx/'
-              target='_blank'
-            >
-              <svg
-                class='fill-white h-8'
-                role='img'
-                viewBox='0 0 24 24'
-                xmlns='http://www.w3.org/2000/svg'
-                ><title>Instagram</title><path
-                  d='M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z'
-                ></path></svg
-              >
-            </a>
-            <a
-              href='https://www.tiktok.com/@futuristic.mindsmx?_t=8lHPYUGf7aw&_r=1'
-              target='_blank'
-            >
-              <svg
-                class='fill-white h-8'
-                role='img'
-                viewBox='0 0 24 24'
-                xmlns='http://www.w3.org/2000/svg'
-                ><title>TikTok</title><path
-                  d='M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z'
-                ></path></svg
-              >
-            </a>
-          </div>
-          <div class='py-4 tex-contacto col-lg-4 col-md-6 col-12'>
-            <strong><h5>Leimy Jimenez</h5> </strong><p>
-              Especialista de Relaciones Públicas
-            </p>
-            <p>
-              <a href='mailto:leimy.jimenez@igeco.mx' class='link text-center'
-                >leimy.jimenez@igeco.mx</a
-              >
-            </p>
-            <p>Tel: +52 55 2660 1388</p>
-          </div>
-        </div>
-      </div>
-      <div class='text-white font-bold py-5 border-y-2'>
-        ITALIAN GERMAN EXHIBITION COMPANY
-      </div>
-      <div class='text-white font-bold flex justify-center mt-10'>
-        <a href='https://igeco.mx/aviso-de-privacidad' target='_blank'
-          >Aviso de privacidad
-        </a>
       </div>
     </div>
+    <div class='py-auto sm:py-10' id='registro'>
+      <h2>SEDES</h2>
+      <div class='grid lg:flex gap-4 justify-center m-4'>
+        <div class='flip-card'>
+          <div class='flip-card-inner'>
+            <div
+              class='flip-card-front border-[#A8A8AB] border-[4px] rounded-xl'
+            >
+              <div
+                class='w-[300px] h-[200px] text-white grid place-content-center text-2xl'
+              >
+                <p>14 de mayo 2024<br />Silao</p>
+              </div>
+            </div>
+            <div
+              class='flip-card-back border-[#A8A8AB] border-[4px] rounded-xl w-[300px] h-[200px] text-white grid place-content-center text-2xl'
+            >
+              <p>
+                Unidad Profesional Interdisciplinaria de Ingeniería Campus
+                Guanajuato.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class='flip-card'>
+          <div class='flip-card-inner'>
+            <div
+              class='flip-card-front1 border-[#A8A8AB] border-[4px] rounded-xl'
+            >
+              <div
+                class='w-[300px] h-[200px] text-white grid place-content-center text-2xl'
+              >
+                <p>23 de mayo 2024 <br />Valle de Santiago</p>
+              </div>
+            </div>
+            <div
+              class='flip-card-back1 border-[#A8A8AB] border-[4px] rounded-xl w-[300px] h-[200px] text-white grid place-content-center text-2xl'
+            >
+              <p>Universidad Tecnológica del Suroeste de Guanajuato.</p>
+            </div>
+          </div>
+        </div>
+        <div class='flip-card'>
+          <div class='flip-card-inner'>
+            <div
+              class='flip-card-front2 border-[#A8A8AB] border-[4px] rounded-xl'
+            >
+              <div
+                class='w-[300px] h-[200px] text-white grid place-content-center text-2xl'
+              >
+                <p>30 de mayo 2024<br />Purísima del Rincón</p>
+              </div>
+            </div>
+            <div
+              class='flip-card-back2 border-[#A8A8AB] border-[4px] rounded-xl w-[300px] h-[200px] text-white grid place-content-center text-2xl'
+            >
+              <p>Instituto Tecnológico Superior de Purísima del Rincón.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <Registro client:only />
+    <div class='py-2 md:py-10'>
+      <h2>ORGANIZADO POR:</h2>
+      <div class='container grid lg:flex justify-center pt-16 gap-6 mx-auto'>
+        <img src='../img/logo_igeco.webp' alt='Logotipo Igeco' />
+        <img src='../img/Logo_messe.webp' alt='Logotipo Messe' />
+      </div>
+    </div>
+    <div class='py-10 pb-16 items-center flex flex-col justify-center'>
+      <h2>ALIADOS ESTRATÉGICOS</h2>
+      <img
+        src='../img/logotipo_guanajuato.webp'
+        alt='Logotipo Igeco'
+        class='pt-10 w-[550px]'
+      />
+    </div>
+    <div
+      class='baner grid grid-cols-2 place-items-center md:justify-around md:flex max-h-fit gap-2 xl:max-h-[140px] p-5'
+    >
+      <img
+        src='../img/logo_igeco.webp'
+        alt='logotipo igeco'
+        class='w-[150px]'
+      />
+      <img
+        src='../img/Logo_messe.webp'
+        alt='Logotipo Messe'
+        class='w-[150px]'
+      />
+      <img
+        src='../img/logotipo_guanajuato.webp'
+        alt='Logotipo Igeco'
+        class='w-[150px]'
+      />
+      <img src='../img/logoMtech2024.webp' alt='Mtech 2024' class='w-[70px]' />
+    </div>
+    <div
+      class='block my-auto sm:flex sm:justify-center gap-10 sm:gap-24 py-4 ms:py-16 text-white text-center'
+    >
+      <img
+        class='rounded-full max-w-max h-60 mx-auto sm:mx-0 sm:my-auto'
+        src='../img/img_Leimy_Jimenez.webp'
+        alt='Leimy Jimenez'
+      />
+      <div class='py-4'>
+        <p>REDES SOCIALES<br />M-TECH</p>
+        <div class='flex justify-center gap-2 py-10 px-7 mx-auto'>
+          <a href='https://www.facebook.com/FuturisticMindsMx/' target='_blank'>
+            <svg
+              class='fill-white h-8'
+              role='img'
+              viewBox='0 0 24 24'
+              xmlns='http://www.w3.org/2000/svg'
+              ><title>Facebook</title><path
+                d='M24 12.073c0-6.27-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z'
+              ></path></svg
+            >
+          </a>
+          <a
+            href='https://www.instagram.com/futuristicmindsmx/'
+            target='_blank'
+          >
+            <svg
+              class='fill-white h-8'
+              role='img'
+              viewBox='0 0 24 24'
+              xmlns='http://www.w3.org/2000/svg'
+              ><title>Instagram</title><path
+                d='M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z'
+              ></path></svg
+            >
+          </a>
+          <a
+            href='https://www.tiktok.com/@futuristic.mindsmx?_t=8lHPYUGf7aw&_r=1'
+            target='_blank'
+          >
+            <svg
+              class='fill-white h-8'
+              role='img'
+              viewBox='0 0 24 24'
+              xmlns='http://www.w3.org/2000/svg'
+              ><title>TikTok</title><path
+                d='M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z'
+              ></path></svg
+            >
+          </a>
+        </div>
+        <div class='py-4 tex-contacto col-lg-4 col-md-6 col-12'>
+          <strong><h5>Leimy Jimenez</h5> </strong><p>
+            Especialista de Relaciones Públicas
+          </p>
+          <p>
+            <a href='mailto:leimy.jimenez@igeco.mx' class='link text-center'
+              >leimy.jimenez@igeco.mx</a
+            >
+          </p>
+          <p>Tel: +52 55 2660 1388</p>
+        </div>
+      </div>
+    </div>
+    <div class='text-white font-bold py-5 border-y-2'>
+      ITALIAN GERMAN EXHIBITION COMPANY
+    </div>
+    <div class='text-white font-bold flex justify-center mt-10'>
+      <a href='https://igeco.mx/aviso-de-privacidad' target='_blank'
+        >Aviso de privacidad
+      </a>
+    </div>
   </section>
-
-  <style>
-    .Mtech_info {
-      background: rgb(75, 11, 138);
-      background: linear-gradient(
-        111deg,
-        rgba(75, 11, 138, 1) 4%,
-        rgba(2, 1, 8, 1) 50%,
-        rgba(31, 113, 179, 1) 93%
-      );
-    }
-    .Mtech_info h1 {
-      color: white;
-      text-align: center;
-      text-shadow: 0px 0px 15px white;
-      font-size: 4rem;
-      font-weight: bold;
-    }
-    .Mtech_info h2 {
-      color: white;
-      text-align: center;
-      text-shadow: 0px 0px 15px white;
-      font-size: 2rem;
-      font-weight: bold;
-    }
-    .Mtech_info h3 {
-      color: #ff44cc;
-      text-align: center;
-    }
-    .box_1 {
-      box-shadow: 0px 0px 10px 8px #b43ee0;
-    }
-    .box_2 {
-      box-shadow: 0px 0px 10px 8px #35aac5;
-      justify-self: end;
-      margin-top: -50px;
-    }
-    .box_3 {
-      box-shadow: 0px 0px 10px 8px #c60a86;
-      margin-top: 20px;
-    }
-    .box_4 {
-      box-shadow:
-        0px 0px 15px 8px #ff44cc,
-        inset 0px 0px 15px 8px #ff44cc;
-    }
-    .box_41 {
-      box-shadow:
-        0px 0px 15px 8px #8200ff,
-        inset 0px 0px 15px 8px #8200ff;
-    }
-    .box_5 {
-      box-shadow:
-        0px 0px 15px 15px #3e89e1,
-        inset 0px 0px 15px 15px #3e89e1;
-    }
-    .box_51 {
-      box-shadow:
-        0px 0px 15px 15px #cc22ea,
-        inset 0px 0px 15px 15px #cc22ea;
-    }
-    .box_52 {
-      box-shadow:
-        0px 0px 15px 15px #f6267b,
-        inset 0px 0px 15px 15px #f6267b;
-    }
-
-    .box_6 {
-      box-shadow:
-        0px 0px 15px 8px #7329ca,
-        inset 0px 0px 15px 80px #7329ca;
-    }
-    .baner {
-      background: linear-gradient(
-        78deg,
-        rgba(1, 0, 236, 1) 0%,
-        rgba(157, 34, 241, 1) 78%,
-        rgba(1, 0, 236, 1) 100%
-      );
-    }
-    .conv {
-      background: linear-gradient(
-        111deg,
-        #8339e9 4%,
-        rgba(2, 1, 8, 1) 50%,
-        #117496 93%
-      );
-      text-align: center;
-      text-shadow: 0px 0px 15px white;
-    }
-
-    .flip-card {
-      background-color: transparent;
-      width: 300px;
-      height: 200px;
-      perspective: 1000px;
-    }
-    .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.8s;
-      transform-style: preserve-3d;
-    }
-
-    .flip-card:hover .flip-card-inner {
-      transform: rotateY(180deg);
-    }
-
-    .flip-card-front,
-    .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      box-shadow:
-        0px 0px 15px 8px #7329ca,
-        inset 0px 0px 15px 90px #7329ca;
-      text-shadow: 0px 0px 15px white;
-      font-weight: bold;
-    }
-
-    .flip-card-front {
-      background-color: #bbb;
-    }
-
-    .flip-card-back {
-      color: white;
-      transform: rotateY(180deg);
-    }
-    .flip-card-front1,
-    .flip-card-back1 {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      box-shadow:
-        0px 0px 15px 8px #1a4c90,
-        inset 0px 0px 15px 90px #1a4c90;
-      text-shadow: 0px 0px 15px white;
-      font-weight: bold;
-    }
-    .flip-card-front1 {
-      background-color: #bbb;
-    }
-
-    .flip-card-back1 {
-      color: white;
-      transform: rotateY(180deg);
-    }
-
-    .flip-card-front2,
-    .flip-card-back2 {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      box-shadow:
-        0px 0px 15px 8px #980944,
-        inset 0px 0px 15px 90px #980944;
-      text-shadow: 0px 0px 15px white;
-      font-weight: bold;
-    }
-    .flip-card-front2 {
-      background-color: #bbb;
-    }
-
-    .flip-card-back2 {
-      color: white;
-      transform: rotateY(180deg);
-    }
-
-    @media (min-width: 768px) {
-    }
-    @media (max-width: 1278px) {
-      .box_2 {
-        margin-top: 0;
-      }
-    }
-    @media (min-width: 1280px) {
-    }
-    @media (min-width: 1536px) {
-    }
-  </style>
 </Layout>
+
+<style>
+  .Mtech_info {
+    background: rgb(75, 11, 138);
+    background: linear-gradient(
+      111deg,
+      rgba(75, 11, 138, 1) 4%,
+      rgba(2, 1, 8, 1) 50%,
+      rgba(31, 113, 179, 1) 93%
+    );
+  }
+  .Mtech_info h1 {
+    color: white;
+    text-align: center;
+    text-shadow: 0px 0px 15px white;
+    font-size: 4rem;
+    font-weight: bold;
+  }
+  .Mtech_info h2 {
+    color: white;
+    text-align: center;
+    text-shadow: 0px 0px 15px white;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .Mtech_info h3 {
+    color: #ff44cc;
+    text-align: center;
+  }
+  .box_1 {
+    box-shadow: 0px 0px 10px 8px #b43ee0;
+  }
+  .box_2 {
+    box-shadow: 0px 0px 10px 8px #35aac5;
+    justify-self: end;
+    margin-top: -50px;
+  }
+  .box_3 {
+    box-shadow: 0px 0px 10px 8px #c60a86;
+    margin-top: 20px;
+  }
+  .box_4 {
+    box-shadow:
+      0px 0px 15px 8px #ff44cc,
+      inset 0px 0px 15px 8px #ff44cc;
+  }
+  .box_41 {
+    box-shadow:
+      0px 0px 15px 8px #8200ff,
+      inset 0px 0px 15px 8px #8200ff;
+  }
+  .box_5 {
+    box-shadow:
+      0px 0px 15px 15px #3e89e1,
+      inset 0px 0px 15px 15px #3e89e1;
+  }
+  .box_51 {
+    box-shadow:
+      0px 0px 15px 15px #cc22ea,
+      inset 0px 0px 15px 15px #cc22ea;
+  }
+  .box_52 {
+    box-shadow:
+      0px 0px 15px 15px #f6267b,
+      inset 0px 0px 15px 15px #f6267b;
+  }
+
+  .box_6 {
+    box-shadow:
+      0px 0px 15px 8px #7329ca,
+      inset 0px 0px 15px 80px #7329ca;
+  }
+  .baner {
+    background: linear-gradient(
+      78deg,
+      rgba(1, 0, 236, 1) 0%,
+      rgba(157, 34, 241, 1) 78%,
+      rgba(1, 0, 236, 1) 100%
+    );
+  }
+  .conv {
+    background: linear-gradient(
+      111deg,
+      #8339e9 4%,
+      rgba(2, 1, 8, 1) 50%,
+      #117496 93%
+    );
+    text-align: center;
+    text-shadow: 0px 0px 15px white;
+  }
+
+  .flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    box-shadow:
+      0px 0px 15px 8px #7329ca,
+      inset 0px 0px 15px 90px #7329ca;
+    text-shadow: 0px 0px 15px white;
+    font-weight: bold;
+  }
+
+  .flip-card-front {
+    background-color: #bbb;
+  }
+
+  .flip-card-back {
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .flip-card-front1,
+  .flip-card-back1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    box-shadow:
+      0px 0px 15px 8px #1a4c90,
+      inset 0px 0px 15px 90px #1a4c90;
+    text-shadow: 0px 0px 15px white;
+    font-weight: bold;
+  }
+  .flip-card-front1 {
+    background-color: #bbb;
+  }
+
+  .flip-card-back1 {
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front2,
+  .flip-card-back2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    box-shadow:
+      0px 0px 15px 8px #980944,
+      inset 0px 0px 15px 90px #980944;
+    text-shadow: 0px 0px 15px white;
+    font-weight: bold;
+  }
+  .flip-card-front2 {
+    background-color: #bbb;
+  }
+
+  .flip-card-back2 {
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  @media (min-width: 768px) {
+  }
+  @media (max-width: 1278px) {
+    .box_2 {
+      margin-top: 0;
+    }
+  }
+  @media (min-width: 1280px) {
+  }
+  @media (min-width: 1536px) {
+  }
+</style>
