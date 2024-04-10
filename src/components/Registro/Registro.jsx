@@ -6,15 +6,9 @@ import { useZustandStore } from '../../store/form-store.js'
 export function Registro() {
   const { setZustandState } = useZustandStore()
 
-  const [estadoSeleccionado, setEstadoSeleccionado] = useState('Guanajuato')
   const [message, setMessage] = useState('')
 
-  const handleEstadoChange = (event) => {
-    const estado = event.target.value
-    setEstadoSeleccionado(estado)
-  }
-
-  const municipios = estadoSeleccionado ? estados[estadoSeleccionado] : []
+  const municipios = estados['Guanajuato']
 
   const [genero1, setGeneroSeleccionado1] = useState('')
   const [genero2, setGeneroSeleccionado2] = useState('')
@@ -39,14 +33,13 @@ export function Registro() {
     ? 'bg-gray-500 text-gray-600'
     : 'bg-blue-500 hover:bg-blue-700 text-white '
 
-    const [categorias, setcategoria] = useState('')
-    const handleCategoriaChange = (e) => {
+  const [categorias, setcategoria] = useState('')
+  const handleCategoriaChange = (e) => {
     const categoria = e.target.value
     setcategoria(categoria)
   }
-  
-  const requeri = categorias === 'Sumo Autónomo'  ? 'hidden' : ''
-  
+
+  const requeri = categorias === 'Sumo Autónomo' ? 'hidden' : ''
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -56,7 +49,7 @@ export function Registro() {
     if (!correcto) {
       try {
         const validarEquipos = await fetch(
-          'http://mtech.igeco.mx/backend/obtener-registros',
+          'https://mtech.igeco.mx/backend/obtener-registros',
           {
             method: 'POST',
             headers: {
@@ -212,7 +205,7 @@ export function Registro() {
               className='block text-sm font-medium leading-6'
             >
               Requerimiento
-            </label> 
+            </label>
             <div className='mt-2 w-96 '>
               <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 w-full'>
                 <input
@@ -236,23 +229,21 @@ export function Registro() {
               Municipio
             </label>
             <div className='mt-2'>
-              {estadoSeleccionado && (
-                <select
-                  name='municipio'
-                  id='municipio'
-                  className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
-                  required
-                >
-                  <option value='' defaultValue>
-                    ----Selecciona un Municipio-----
+              <select
+                name='municipio'
+                id='municipio'
+                className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6'
+                required
+              >
+                <option value='' defaultValue>
+                  ----Selecciona un Municipio-----
+                </option>
+                {municipios.map((municipio, index) => (
+                  <option key={index} value={municipio}>
+                    {municipio}
                   </option>
-                  {municipios.map((municipio, index) => (
-                    <option key={index} value={municipio}>
-                      {municipio}
-                    </option>
-                  ))}
-                </select>
-              )}
+                ))}
+              </select>
             </div>
           </div>
 
