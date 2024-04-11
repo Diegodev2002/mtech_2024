@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { estados } from '../../data/constans_estados.js'
 
 import { useZustandStore } from '../../store/form-store.js'
+import { Input } from './Input.jsx'
 
 export function Registro() {
   const { setZustandState } = useZustandStore()
@@ -39,21 +40,20 @@ export function Registro() {
     ? 'bg-gray-500 text-gray-600'
     : 'bg-blue-500 hover:bg-blue-700 text-white '
 
-    const [categorias, setcategoria] = useState('')
-    const handleCategoriaChange = (e) => {
+  const [categorias, setcategoria] = useState('')
+  const handleCategoriaChange = (e) => {
     const categoria = e.target.value
     setcategoria(categoria)
   }
-  
-  const requeri = categorias === 'Sumo Autónomo'  ? 'hidden' : ''
-  
+
+  const requeri = categorias === 'Sumo Autónomo' ? 'hidden' : ''
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const formData = new FormData(e.target)
     const data = Object.fromEntries(formData.entries())
-
-    if (!correcto) {
+    console.log(data)
+    /*if (!correcto) {
       try {
         const validarEquipos = await fetch(
           'http://mtech.igeco.mx/backend/obtener-registros',
@@ -98,7 +98,7 @@ export function Registro() {
       }
     } else {
       setMessage('El equipo debe de ser genero mixto...')
-    }
+    }*/
   }
 
   return (
@@ -109,25 +109,14 @@ export function Registro() {
 
       <p className='mt-10'>Captura los datos de tu equipo</p>
       <form onSubmit={handleSubmit} className='mt-5' id='form-register'>
-        <div className='grid place-content-center '>
-          <label
-            htmlFor='nombre_equipo'
-            className='block text-sm font-medium leading-6'
-          >
-            Nombre del equipo
-          </label>
-          <div className='mt-2'>
-            <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md'>
-              <input
-                type='text'
-                name='nombre_equipo'
-                id='nombre_equipo'
-                required
-                autoComplete='nombre_equipo'
-                className='block flex-1 border-0 bg-transparent py-1.5 px-4 focus:ring-0 sm:text-sm sm:leading-6'
-              />
-            </div>
-          </div>
+        <div className='grid place-content-center'>
+          <Input
+            type='text'
+            name='nombre_equipo'
+            label='Nombre del equipo'
+            placeholder='Ingresa el nombre del equipo'
+            required={true}
+          />
         </div>
 
         <div className='grid sm:flex gap-4 justify-center mt-5'>
@@ -167,24 +156,13 @@ export function Registro() {
 
         <div className='grid sm:flex gap-2 place-content-center mt-5 mx-2'>
           <div>
-            <label
-              htmlFor='nombre_escuela'
-              className='block text-sm font-medium leading-6'
-            >
-              Nombre de la escuela
-            </label>
-            <div className='mt-2 '>
-              <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md'>
-                <input
-                  type='text'
-                  name='nombre_escuela'
-                  id='nombre_escuela'
-                  autoComplete='nombre_escuela'
-                  required
-                  className='block flex-1 border-0 bg-transparent py-1.5 px-4 focus:ring-0 sm:text-sm sm:leading-6'
-                />
-              </div>
-            </div>
+            <Input
+              type='text'
+              name='nombre_escuela'
+              label='Nombre de la escuela'
+              placeholder='Ingresa el nombre de la escuela'
+              required={true}
+            />
           </div>
           <div>
             <label
@@ -212,7 +190,7 @@ export function Registro() {
               className='block text-sm font-medium leading-6'
             >
               Requerimiento
-            </label> 
+            </label>
             <div className='mt-2 w-96 '>
               <div className='flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 w-full'>
                 <input
