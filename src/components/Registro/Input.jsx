@@ -1,4 +1,4 @@
-export function Input({ type, name, label, placeholder, required, color }) {
+export function Input({ type, name, label, placeholder, required }) {
   return (
     <>
       <label htmlFor={name} className='block text-sm font-medium leading-6'>
