@@ -220,14 +220,17 @@ export function Registro() {
         <Participante
           titulo = 'Lider del equipo'
           numero = '1'
+          onChange={handleGenero_integrante_Change1}
           />
-           <Participante
+          <Participante
           titulo = 'Integrante 2'
-          numero = '2'
+          numero = '2'              
+          onChange={handleGenero_integrante_Change2}
           />
         <Participante
           titulo = 'Integrante 3'
           numero = '3'
+          onChange={handleGenero_integrante_Change3}
           />
         <p className='text-red-600 font-bold text-2xl'>{message}</p>
         <button

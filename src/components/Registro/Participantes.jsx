@@ -2,7 +2,7 @@
  import { Select } from "./Select"
 
 
- export function Participante({titulo, subtitulo=' ',numero}){
+ export function Participante({titulo, subtitulo=' ',numero, onChange= ''}){
  return(
   <>
     <div className='grid lg:flex gap-4 lg:justify-between mt-10 lg:mt-20'>
@@ -51,10 +51,10 @@
                 <Select
                 label= 'Genero'
                 name={'genero_integrante'+numero}
-                text= 'elige una opción'
+                text= {'elige una opción'}
                 options={['Mujer', 'Hombre']}
-                onChange={`handleGenero_integrante_Change${numero}`}
-                />
+                onChange={{onchange}}
+                /> 
               </div>
               {/* Edad */}
               <div className='w-full'>
