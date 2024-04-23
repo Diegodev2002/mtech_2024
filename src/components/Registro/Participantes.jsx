@@ -2,7 +2,8 @@
  import { Select } from "./Select"
 
 
- export function Participante({titulo, subtitulo=' ',numero, onChange= ''}){
+ export function Participante({titulo, subtitulo=' ',numero, onChange}){
+  
  return(
   <>
     <div className='grid lg:flex gap-4 lg:justify-between mt-10 lg:mt-20'>
@@ -53,7 +54,7 @@
                 name={'genero_integrante'+numero}
                 text= {'elige una opción'}
                 options={['Mujer', 'Hombre']}
-                onChange={{onchange}}
+                onChange={onChange}
                 /> 
               </div>
               {/* Edad */}

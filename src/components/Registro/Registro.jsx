@@ -165,6 +165,7 @@ export function Registro() {
             required={true}
           />
           </div>
+          {/* Requerimiento */}
           <div className={`${requeri}  min-h-min truncate`}>
             <Input
               type='text'
@@ -185,7 +186,6 @@ export function Registro() {
               options={estados}
               />
           </div>
-          
           {/* Nivel */}
           <div className='lg:col-span-2'>
           <Input
@@ -213,7 +213,7 @@ export function Registro() {
           titulo = 'Coach'
           subtitulo='Para registrar a tu equipo debes considerar lo siguiente: El
           equipo debe de estar conformado por 3 integrantes de genero mixto
-          (2 mujeres y 1 hombre) o (2 hombres y 1 mujer).'
+          (2 mujeres y 1 hombr  e) o (2 hombres y 1 mujer).'
           numero = 'coach'
           />
 

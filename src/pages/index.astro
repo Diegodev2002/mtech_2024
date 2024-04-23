@@ -2,6 +2,7 @@
 import { Registro } from '../components/Registro/Registro.jsx'
 import { VideoAlphaChannel } from '../components/VideoWithAlpha/VideoAlphaChannel.jsx'
 import Layout from '../layouts/Layout.astro'
+import CardFlip from '../components/cardFlip.astro'
 ---
 
 <Layout title='M-TECH 2024'>
@@ -202,63 +203,13 @@ import Layout from '../layouts/Layout.astro'
     <div class='py-auto sm:py-10' id='registro'>
       <h2>SEDES</h2>
       <div class='grid lg:flex gap-4 justify-center m-4'>
-        <div class='flip-card'>
-          <div class='flip-card-inner'>
-            <div
-              class='flip-card-front border-[#A8A8AB] border-[4px] rounded-xl'
-            >
-              <div
-                class='w-[300px] h-[200px] text-white grid place-content-center text-2xl'
-              >
-                <p>14 de mayo 2024<br />Silao</p>
-              </div>
-            </div>
-            <div
-              class='flip-card-back border-[#A8A8AB] border-[4px] rounded-xl w-[300px] h-[200px] text-white grid place-content-center text-2xl'
-            >
-              <p>
-                Unidad Profesional Interdisciplinaria de Ingeniería Campus
-                Guanajuato.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class='flip-card'>
-          <div class='flip-card-inner'>
-            <div
-              class='flip-card-front1 border-[#A8A8AB] border-[4px] rounded-xl'
-            >
-              <div
-                class='w-[300px] h-[200px] text-white grid place-content-center text-2xl'
-              >
-                <p>23 de mayo 2024 <br />Valle de Santiago</p>
-              </div>
-            </div>
-            <div
-              class='flip-card-back1 border-[#A8A8AB] border-[4px] rounded-xl w-[300px] h-[200px] text-white grid place-content-center text-2xl'
-            >
-              <p>Universidad Tecnológica del Suroeste de Guanajuato.</p>
-            </div>
-          </div>
-        </div>
-        <div class='flip-card'>
-          <div class='flip-card-inner'>
-            <div
-              class='flip-card-front2 border-[#A8A8AB] border-[4px] rounded-xl'
-            >
-              <div
-                class='w-[300px] h-[200px] text-white grid place-content-center text-2xl'
-              >
-                <p>30 de mayo 2024<br />Purísima del Rincón</p>
-              </div>
-            </div>
-            <div
-              class='flip-card-back2 border-[#A8A8AB] border-[4px] rounded-xl w-[300px] h-[200px] text-white grid place-content-center text-2xl'
-            >
-              <p>Instituto Tecnológico Superior de Purísima del Rincón.</p>
-            </div>
-          </div>
-        </div>
+				<CardFlip fecha="14 de mayo 2024", lugar="Silao", sede="Unidad Profesional Interdisciplinaria de Ingeniería Campus Guanajuato.", color="#7329ca"/>
+        <CardFlip fecha="23 de mayo 2024", lugar="Valle de Santiago", sede="Universidad Tecnológica del Suroeste de Guanajuato.", color="#980944" />
+				<CardFlip fecha="30 de mayo 2024", lugar="Purísima del Rincón", sede="Instituto Tecnológico Superior de Purísima del Rincón.", color="#1a4c90" />
+      </div>
+       
+    </div>
+        
       </div>
     </div>
     <Registro client:only />
@@ -363,47 +314,11 @@ import Layout from '../layouts/Layout.astro'
     text-shadow: 0px 0px 15px white;
   }
 
-  .flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 200px;
-    perspective: 1000px;
-  }
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  }
+  
 
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
+ 
 
-  .flip-card-front,
-  .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    box-shadow:
-      0px 0px 15px 8px #7329ca,
-      inset 0px 0px 15px 90px #7329ca;
-    text-shadow: 0px 0px 15px white;
-    font-weight: bold;
-  }
 
-  .flip-card-front {
-    background-color: #bbb;
-  }
-
-  .flip-card-back {
-    color: white;
-    transform: rotateY(180deg);
-  }
   .flip-card-front1,
   .flip-card-back1 {
     position: absolute;
@@ -459,4 +374,6 @@ import Layout from '../layouts/Layout.astro'
   }
   @media (min-width: 1536px) {
   }
+
+
 </style>

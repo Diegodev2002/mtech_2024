@@ -1,4 +1,4 @@
-export function Select ({label,name,text,options,onChange}){
+export function Select ({label,name,text,options,onChange=()=>{}}){
   console.log(name+text)
 return(
   <>
@@ -13,8 +13,10 @@ return(
               <option value='' defaultValue>
                 {text}
               </option>
-              {options.map((option) => (
-              <option>{option}</option>   ))}   
+              {options.map((option, index) => (
+              <option key={index}>{option}</option>   ))}   
             </select>
             </>
+
+
 )}
