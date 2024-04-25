@@ -1,38 +1,36 @@
 ---
-import Menu from '../components/Menu.astro'
-import WhatsappButton from '../components/WhatsappButton.astro'
+import WhatsappButton from '../components/WhatsappButton.astro';
 interface Props {
-  title: string
+	title: string;
 }
 
-const { title } = Astro.props
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang='en'>
-  <head>
-    <meta charset='UTF-8' />
-    <meta
-      name='description'
-      content='M-TECH 2024 desafía al futuro y demuestra tu talento en la tercera edición de la competencia de robótica que el Gobierno del Estado de Guanajuato e Italian German Exhibition Company Mexico que organizan para ti.'
-    />
-    <meta
-      name='keywords'
-      content='M-TECH 2024, Guanajuato, robótica, talento, competencia, Sumo Autónomo, M-TECH INNOVATIONS, M-TECH ENGINEERS'
-    />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/img/faviconHfmexico.png' />
-    <meta name='generator' content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body>
-    <WhatsappButton/>
-    <Menu />
-    <slot />
-    <script
-      is:inline
-      src='https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js'
-    ></script>
-  </body>
+	<head>
+		<meta charset='UTF-8' />
+		<meta
+			name='description'
+			content='M-TECH 2024 desafía al futuro y demuestra tu talento en la tercera edición de la competencia de robótica que el Gobierno del Estado de Guanajuato e Italian German Exhibition Company Mexico que organizan para ti.'
+		/>
+		<meta
+			name='keywords'
+			content='M-TECH 2024, Guanajuato, robótica, talento, competencia, Sumo Autónomo, M-TECH INNOVATIONS, M-TECH ENGINEERS'
+		/>
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/img/faviconHfmexico.png' />
+		<meta name='generator' content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<WhatsappButton />
+		<slot />
+		<script
+			is:inline
+			src='https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js'
+		></script>
+	</body>
 </html>
 <style></style>
