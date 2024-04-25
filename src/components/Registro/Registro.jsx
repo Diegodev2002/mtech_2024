@@ -95,8 +95,8 @@ export function Registro() {
   }
 
   return (
-    <div className='text-white font-bold backdrop-blur-4xl bg-white/10 text-center bg-blur-md p-5 rounded-2xl'>
-      <p className='text-2xl' style={{ textShadow: '0px 0px 15px white' }}>
+    <div className='text-white font-bold backdrop-blur-4xl bg-white/10 text-center bg-blur-md p-5 '  >
+      <p className='text-2xl ' style={{ textShadow: '0px 0px 15px white' }}>
         REGÍSTRATE
       </p>
 

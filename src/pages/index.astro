@@ -1,6 +1,8 @@
 ---
 import { Registro } from '../components/Registro/Registro.jsx';
 import Layout from '../layouts/Layout.astro';
+import { MarqueeReact } from '../components/MarqueeReact.jsx';
+import { aliados_estrategicos } from '../data/constans_logos.js';
 ---
 
 <Layout title='M-TECH 2024'>
@@ -264,45 +266,37 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 		<Registro client:only />
-		<div class='py-2 md:py-10'>
-			<h2>ORGANIZADO POR:</h2>
-			<div class='container grid lg:flex justify-center pt-16 gap-6 mx-auto'>
-				<img src='../img/logo_igeco.webp' alt='Logotipo Igeco' />
-				<img src='../img/Logo_messe.webp' alt='Logotipo Messe' />
-			</div>
-		</div>
-		<div class='py-10 pb-16 items-center flex flex-col justify-center'>
-			<h2>ALIADOS ESTRATÉGICOS</h2>
-			<div >
-				<div class='md:flex gap-14'>
+		<div class='bg-white'>
+			<div class='py-2 md:py-10 text-black'>
+				<p class='text-black text-3xl text-center font-bold'>ORGANIZADO POR:</p>
+				<div
+					class='container grid lg:flex justify-center pt-16 gap-[6.5rem] mx-auto'
+				>
 					<img
-					src='../img/logotipo_guanajuato.webp'
-					alt='Logotipo Igeco'
-					class='m-auto pt-10 w-[250px] md:w-[350px]'
+						class='w-[150px] h-auto'
+						src='../img/italianExhibitionGroup.webp'
+						alt='Logotipo Igeco'
 					/>
 					<img
-						src='../img/STEAM_QKIDS.webp'
-						alt='Logotipo Steam Qkids'
-						class='m-auto pt-10 w-[180px] md:w-[200px]'
-					/>
-					<img
-						src='../img/LOGO_Tecnologico_Superiro_Purisima_del_Rincon.webp'
-						alt='Logotipo Instituto Tecnológico Superior de Purísima de Rincón'
-						class='m-auto pt-10 w-[180px] md:w-[350px]'
+						class='w-[240px] h-[60px]'
+						src='../img/deutscheMesse.webp'
+						alt='Logotipo Messe '
 					/>
 				</div>
-				<div class='md:flex gap-12'>
-					<img
-						src='../img/ESCUDO_UPIIG.webp'
-						alt='Logotipo Instituto Tecnológico Superior de Purísima de Rincón'
-						class='m-auto pt-10 w-[180px] md:w-[200px] drop-shadow-2xl'
-					/>
-					<img
-						src='../img/utsoe_logo_blanco.webp'
-						alt='Logotipo Instituto Tecnológico Superior de Purísima de Rincón'
-						class='m-auto pt-10 h-[160px] md:w-[350px]'
-					/>
-					
+				<div class='py-10 pb-16 items-center justify-center'>
+					<p class='text-black text-3xl text-center font-bold'>
+						ALIADOS ESTRATÉGICOS
+					</p>
+					<div class='mb-3'>
+						<img
+							src='../img/guanajuato_gobierno.webp'
+							alt='Logotipo Igeco'
+							class='mx-auto pt-10 w-[240px] md:w-[280px] shadow-current'
+						/>
+					</div>
+					<div>
+						<MarqueeReact images={aliados_estrategicos} client:only />
+					</div>
 				</div>
 			</div>
 		</div>
@@ -319,17 +313,13 @@ import Layout from '../layouts/Layout.astro';
 				alt='Logotipo Messe'
 				class='w-[150px]'
 			/>
-			
+
 			<img
 				src='../img/logotipo_guanajuato.webp'
 				alt='Logotipo Igeco'
 				class='w-[150px]'
 			/>
-			<img 
-				src='../img/logoMtech2024.webp' 
-				alt='Mtech 2024' 
-				class='w-[70px]' />
-			
+			<img src='../img/logoMtech2024.webp' alt='Mtech 2024' class='w-[70px]' />
 		</div>
 		<div
 			class='block my-auto sm:flex sm:justify-center gap-10 sm:gap-24 py-4 ms:py-16 text-white text-center'
@@ -391,12 +381,12 @@ import Layout from '../layouts/Layout.astro';
 							>leimy.jimenez@igeco.mx</a
 						>
 					</p>
-					<p>Tel: +52 55 2660 1388</p>
+					<p>Tel: +52 1 55 7861 8910</p>
 				</div>
 			</div>
 		</div>
 		<div class='text-white font-bold py-5 border-y-2'>
-			<p class="px-5">ITALIAN GERMAN EXHIBITION COMPANY</p>
+			<p class='px-5'>ITALIAN GERMAN EXHIBITION COMPANY</p>
 		</div>
 		<div class='text-white font-bold flex justify-center mt-1'>
 			<a href='https://igeco.mx/aviso-de-privacidad' target='_blank'

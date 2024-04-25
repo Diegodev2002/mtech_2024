@@ -1,5 +1,6 @@
 ---
-import Menu from '../components/menu.astro'
+import Menu from '../components/Menu.astro'
+import WhatsappButton from '../components/WhatsappButton.astro'
 interface Props {
   title: string
 }
@@ -25,6 +26,7 @@ const { title } = Astro.props
     <title>{title}</title>
   </head>
   <body>
+    <WhatsappButton/>
     <Menu />
     <slot />
     <script
