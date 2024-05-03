@@ -2,7 +2,7 @@ export function Select ({label,name,text,options,onChange=()=>{}}){
   console.log(name+text)
 return(
   <>
-    <p className='text-sm font-medium leading-6'>{label}</p>
+    <p className='text-sm font-medium w-24 leading-6 first-line:'>{label}</p>
             <select
               name={name}
               id={name}

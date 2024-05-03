@@ -176,13 +176,13 @@ export function Registro() {
             />
           </div>
         </div>
-        <div className='grid lg:flex gap-4 mt-5 mx-8 justify-center'>
+        <div className='grid lg:flex gap-4 mt-5 justify-center'>
           {/* Municipio */}
-          <div className='lg:col-span-2  sm:col-start-1'>
+          <div className='lg:col-span-2 sm:col-start-1'>
             <Select
               label= 'Municipio'
               name='municipio'
-              text= '----Selecciona un Municipio-----'
+              text= 'Selecciona un Municipio'
               options={estados}
               />
           </div>
