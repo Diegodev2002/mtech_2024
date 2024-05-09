@@ -62,7 +62,7 @@ export function Registro() {
         console.log(response1)
         if (
           (data.categoria === 'Sumo Autónomo' && response1.total < 16) ||
-          (data.categoria === 'M-Tech Innovations' && response1.total < 14) ||
+          (data.categoria === 'M-Tech Innovations' && response1.total < 16) ||
           (data.categoria === 'M-Tech Engineers' && response1.total < 14)
         ) {
           const guardar_registro = await fetch(
