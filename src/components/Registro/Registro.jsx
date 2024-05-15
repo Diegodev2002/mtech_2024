@@ -95,7 +95,7 @@ export function Registro() {
   }
 
   return (
-    <div className='text-white font-bold backdrop-blur-4xl bg-white/10 text-center bg-blur-md p-5 '  >
+    <div className='text-white font-bold backdrop-blur-4xl bg-white/10 text-center bg-blur-md p-5 '>
       <p className='text-2xl ' style={{ textShadow: '0px 0px 15px white' }}>
         REGÍSTRATE
       </p>
@@ -135,7 +135,7 @@ export function Registro() {
               <option value='' defaultValue>
                 Elige una sede
               </option>
-              <option>Silao - UPIIG</option>
+              {/*<option>Silao - UPIIG</option>*/}
               <option>Valle de Santiago - UTSOE</option>
               <option>Purísima del Rincón - ITSPR </option>
             </select>
