@@ -61,7 +61,7 @@ export function Registro() {
         const response1 = await validarEquipos.json()
         console.log(response1)
         if (
-          (data.categoria === 'Sumo Autónomo' && response1.total < 16) ||
+          (data.categoria === 'Sumo Autónomo' && response1.total < 20) ||
           (data.categoria === 'M-Tech Innovations' && response1.total < 16) ||
           (data.categoria === 'M-Tech Engineers' && response1.total < 14)
         ) {
