@@ -136,7 +136,7 @@ export function Registro() {
                 Elige una sede
               </option>
               {/*<option>Silao - UPIIG</option>*/}
-              <option>Valle de Santiago - UTSOE</option>
+              {/*<option>Valle de Santiago - UTSOE</option>*/}
               <option>Purísima del Rincón - ITSPR </option>
             </select>
           </div>
