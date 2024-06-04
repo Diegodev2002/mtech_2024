@@ -3,6 +3,7 @@ import { Registro } from '../components/Registro/Registro.jsx';
 import Layout from '../layouts/Layout.astro';
 import { MarqueeReact } from '../components/MarqueeReact.jsx';
 import { aliados_estrategicos } from '../data/constans_logos.js';
+import Galeria from '../components/Galeria.astro';
 ---
 
 <Layout title='M-TECH 2024'>
@@ -265,7 +266,8 @@ import { aliados_estrategicos } from '../data/constans_logos.js';
 				</div>
 			</div>
 		</div>
-		<Registro client:only />
+		<Galeria />
+		<!-- <Registro client:only /> -->
 		<div class='bg-white'>
 			<div class='py-2 md:py-10 text-black'>
 				<p class='text-black text-3xl text-center font-bold'>ORGANIZADO POR:</p>
