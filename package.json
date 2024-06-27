@@ -19,10 +19,12 @@
     "astro": "^4.5.8",
     "canvas-confetti": "^1.9.2",
     "flowbite": "^2.3.0",
+    "lightgallery": "^2.7.2",
     "photoswipe": "^5.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.4",
+    "react-slick": "^0.30.2",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.4.3",
     "zustand": "^4.5.2"

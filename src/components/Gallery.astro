@@ -1,0 +1,21 @@
+---
+const { images } = Astro.props;
+---
+
+<div
+	class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-6xl gap-10 mx-auto my-10 px-5'
+	id='gallery'
+>
+	{
+		images.map((image: any) => (
+			<a
+				href={image.href}
+				data-pswp-width={image.width}
+				data-pswp-height={image.height}
+				target='_blank'
+			>
+				<img src={image.href} alt={image.alt} />
+			</a>
+		))
+	}
+</div>

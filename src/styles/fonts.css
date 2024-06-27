@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'pointles';
+  src: url('/fonts/Pointless.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSansss';
+  src: url('/fonts/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

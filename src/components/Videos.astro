@@ -1,0 +1,108 @@
+---
+import '../styles/fonts.css';
+---
+
+<section
+	class="bg-[url('/img/index/bg-2.webp')] bg-center bg-cover text-white pb-10 px-5"
+>
+	<p class='text-4xl pt-7 font-[OpenSansss]'>
+		¡Entonces <strong class='font-[pointles] text-xl md:text-2xl my-3'>M-TECH 2024</strong> es para
+		ti!
+	</p>
+	<div class=' sm:flex  gap-5 my-3 '>
+		<div class='md:basis-1/2 ml-5 lg:ml-28 w-[200px] sm:w-[150px] lg:w-[300px] m-auto md:m-0'>
+			<div
+				id='controls-carousel'
+				class='relative w-[300px] sm:w-[300px]  mx-[-50px] sm:ml-1 md:mx-0  '
+				data-carousel='static'
+			>
+				<!-- Carousel wrapper -->
+				<div
+					class='relative h-[350px]  md:h-[550px] w-[300px] overflow-hidden rounded-lg '
+				>
+					<!-- Item 1 -->
+					<div class='hidden duration-700 ease-in-out' data-carousel-item>
+						<iframe
+							class='absolute block w-[200px] md:w-[300px] h-[500px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-xl'
+							src='https://www.youtube.com/embed/sjHtpFnVOKg?=1&mute=1&loop=1&playlist=sjHtpFnVOKg'
+							allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+						></iframe>
+					</div>
+					<!-- Item 2 -->
+					<div
+						class='hidden duration-700 ease-in-out'
+						data-carousel-item='active'
+					>
+						<iframe
+							class='absolute block w-[200px] md:w-[300px] h-[500px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-xl'
+							src='https://www.youtube.com/embed/TCAD77KB0Gk?=1&mute=1&loop=1&playlist=TCAD77KB0Gk'
+							allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+						></iframe>
+					</div>
+					<!-- Item 3 -->
+					<div class='hidden duration-700 ease-in-out' data-carousel-item>
+						<iframe
+							class='absolute block w-[200px] md:w-[300px] h-[500px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-xl'
+							src='https://www.youtube.com/embed/tczuHri66X8?=1&mute=1&loop=1&playlist=tczuHri66X8'
+							allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+						></iframe>
+					</div>
+				</div>
+				<!-- Slider controls -->
+				<button
+					type='button'
+					class='absolute top-0 start-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none'
+					data-carousel-prev
+				>
+					<span
+						class='inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none'
+					>
+						<svg
+							class='w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180'
+							aria-hidden='true'
+							xmlns='http://www.w3.org/2000/svg'
+							fill='none'
+							viewBox='0 0 6 10'
+						>
+							<path
+								stroke='currentColor'
+								stroke-linecap='round'
+								stroke-linejoin='round'
+								stroke-width='2'
+								d='M5 1 1 5l4 4'></path>
+						</svg>
+						<span class='sr-only'>Previous</span>
+					</span>
+				</button>
+				<button
+					type='button'
+					class='absolute top-0 end-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none'
+					data-carousel-next
+				>
+					<span
+						class='inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none'
+					>
+						<svg
+							class='w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180'
+							aria-hidden='true'
+							xmlns='http://www.w3.org/2000/svg'
+							fill='none'
+							viewBox='0 0 6 10'
+						>
+							<path
+								stroke='currentColor'
+								stroke-linecap='round'
+								stroke-linejoin='round'
+								stroke-width='2'
+								d='m1 9 4-4-4-4'></path>
+						</svg>
+						<span class='sr-only'>Next</span>
+					</span>
+				</button>
+			</div>
+		</div>
+		<img src="/img/index/TXTDESAFIA.webp" alt="" class="md:mt-[55px] w-[320px] sm:w-[400px] md:w-[480px] h-[279px] sm:h-[400px] md:h-[450px] p-10  sm:pr-10 m-auto">
+	</div>
+
+	
+</section>

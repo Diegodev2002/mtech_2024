@@ -4,7 +4,7 @@ import WhatsappButton from '../components/WhatsappButton.astro';
 interface Props {
 	title: string;
 }
-
+import Footer from '../components/Footer.astro';
 const { title } = Astro.props;
 ---
 
@@ -25,14 +25,16 @@ const { title } = Astro.props;
 		<meta name='generator' content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class='bg-black'>
 		<Menu />
 		<WhatsappButton />
 		<slot />
 		<script
 			is:inline
 			src='https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js'
-		></script>
-	</body>
+			></script>
+		</script>
+		<Footer/>
+	</body> 
 </html>
 <style></style>

@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/fonts.css';
+import 'photoswipe/style.css';
+---
+
+<Layout title='M-TECH 2024'>
+	<section class='Mtech_info'>
+		<p class='text-center text-3xl text-white m-7 font-bold'>
+			 Gallery 2022
+		</p>
+		<div class='grid grid-cols-3 max-w-6xl gap-10 mx-auto px-5 pb-10' id='gallery'>
+			<a href='/img/Mtech2022/112.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+				<img src='/img/Mtech2022/112.webp' alt='' /></a>
+        <a href='/img/Mtech2022/12.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+          <img src='/img/Mtech2022/12.webp' alt='' /></a>
+          <a href='/img/Mtech2022/13.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+            <img src='/img/Mtech2022/13.webp' alt='' /></a>
+            <a href='/img/Mtech2022/14.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+              <img src='/img/Mtech2022/14.webp' alt='' /></a>
+              <a href='/img/Mtech2022/15.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                <img src='/img/Mtech2022/15.webp' alt='' /></a>
+                <a href='/img/Mtech2022/16.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                  <img src='/img/Mtech2022/16.webp' alt='' /></a>
+                  <a href='/img/Mtech2022/17.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                    <img src='/img/Mtech2022/17.webp' alt='' /></a>
+                    <a href='/img/Mtech2022/18.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                      <img src='/img/Mtech2022/18.webp' alt='' /></a>
+                      <a href='/img/Mtech2022/19.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                        <img src='/img/Mtech2022/19.webp' alt='' /></a>
+                        <a href='/img/Mtech2022/110.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                          <img src='/img/Mtech2022/110.webp' alt='' /></a>
+                          <a href='/img/Mtech2022/111.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                            <img src='/img/Mtech2022/111.webp' alt='' /></a>
+                            <a href='/img/Mtech2022/124.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                              <img src='/img/Mtech2022/124.webp' alt='' /></a>
+                              <a href='/img/Mtech2022/113.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                                <img src='/img/Mtech2022/113.webp' alt='' /></a>
+                                <a href='/img/Mtech2022/114.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                                  <img src='/img/Mtech2022/114.webp' alt='' /></a>
+                                  <a href='/img/Mtech2022/115.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                                    <img src='/img/Mtech2022/115.webp' alt='' /></a>
+                                    <a href='/img/Mtech2022/116.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                                      <img src='/img/Mtech2022/116.webp' alt='' /></a>
+                                      <a href='/img/Mtech2022/117.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                                        <img src='/img/Mtech2022/117.webp' alt='' /></a>
+                                        <a href='/img/Mtech2022/11.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                                          <img src='/img/Mtech2022/11.webp' alt='' /></a>
+                                          <a href='/img/Mtech2022/119.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                                            <img src='/img/Mtech2022/119.webp' alt='' /></a>
+                                            <a href='/img/Mtech2022/120.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                                              <img src='/img/Mtech2022/120.webp' alt='' /></a>
+                                              <a href='/img/Mtech2022/123.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                                                <img src='/img/Mtech2022/123.webp' alt='' /></a>
+                                              <a href='/img/Mtech2022/121.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                                                <img src='/img/Mtech2022/121.webp' alt='' /></a>
+                                                <a href='/img/Mtech2022/122.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                                                  <img src='/img/Mtech2022/122.webp' alt='' /></a>
+                                                    <a href='/img/Mtech2022/118.webp' data-pswp-width='1920' data-pswp-height='1280' target='_blank'>
+                                                      <img src='/img/Mtech2022/118.webp' alt='' /></a>
+		</div>
+
+		<script>
+			import PhotoSwipeLightbox from 'photoswipe/lightbox';
+			const lightbox = new PhotoSwipeLightbox({
+				gallery: '#gallery',
+				children: 'a',
+				pswpModule: () => import('photoswipe'),
+			});
+			lightbox.init();
+		</script>
+	</section>
+</Layout>
