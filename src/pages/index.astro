@@ -17,153 +17,80 @@ import BannerFinal from '../components/BannerFinal.astro';
 				alt='Imagen M_TECH'
 				class='MtechRobot block absolute z-1 w-[100%] object-right object-cover'
 			/>
-			<div class='capa absolute w-[100%] z-10 h-[550px] opacity-[30%]'></div>
+			<video
+				src='/videos/ArtesMTech2024.mp4'
+				class='absolute inset-0 z-20 w-full h-full video-overlay opacity-10'
+				autoplay
+				muted
+				loop></video>
+			
 		</div>
-		<img
-			src='/img/index/logoMtech.webp'
-			alt=''
-			class='relative z-50 w-[150px] md:w-[300px] m-auto pt-[8rem] md:pt-[11rem]'
-		/>
+		<div data-aos='zoom-in-up' data-aos-duration='60000'>
+			<img
+				src='/img/index/logoMtech.webp'
+				alt=''
+				class='relative z-50 w-[150px] md:w-[350px] m-auto pt-[8rem] md:pt-[11rem]'
+			/>
+		</div>
 	</section>
 	<BannerFinal />
 	<section class='inline-block bg-black'>
-		<div class="relative">
-				<img src='/img/index/imgMano.webp' alt='' class='block w-full h-auto' />
-				<div class='absolute top-0 left-0 flex '>
-						<p class='font-[pointles] text-white text-md md:text-3xl mt-1 md:mt-7'>//M-TECH</p>
-						<p class='text-[#BF64FF] text-md md:text-3xl mt-1 md:mt-7 font-[pointles]'>2024</p>
+		<div class='relative'>
+			<img src='/img/index/imgMano.webp' alt='' class='block w-full h-auto' />
+			<div
+				data-aos='fade-right'
+				data-aos-offset='300'
+				data-aos-easing='ease-in-sine'
+				data-aos-duration='60000'
+			>
+				<div class='absolute top-0 left-0 pl-5 flex'>
+					<p
+						class='font-[pointles] text-white text-md md:text-3xl mt-1 md:mt-7'
+					>
+						//M-TECH
+					</p>
+					<p
+						class='text-[#BF64FF] text-md md:text-3xl mt-1 md:mt-7 font-[pointles]'
+					>
+						2024
+					</p>
 				</div>
+			</div>
 		</div>
-</section>
+	</section>
 
-<section class='relative text-center bg-black '>
-	<div class='md:flex'>
-		<div class='md:w-1/2 bg-[#BF64FF] text-sm md:text-lg py-3 md:py-8 px-3'>
-			<p class='font-[OpenSansss] text-white'>
-				¿Te gustaría <span class="font-bold">romper los límites</strong> de tu imaginación?
-			</p>
+	<section class='relative text-center bg-black'>
+		<div class='md:flex'>
+			<div class='md:w-1/2 bg-[#BF64FF] text-sm md:text-lg py-3 md:py-8 px-3'>
+				<div data-aos='flip-left' data-aos-duration='3000'>
+					<p class='font-[OpenSansss] text-white'>
+						¿Te gustaría <span class='font-bold'>romper los límites</span> de tu
+						imaginación?
+					</p>
+				</div>
+			</div>
+			<div
+				class='md:w-1/2 bg-[#004AAD] text-white py-3 md:py-6 text-sm md:text-lg font-[OpenSansss] px-3'
+			>
+				<div data-aos='flip-right' data-aos-duration='3000'>
+					<p>
+						"Amplía tus horizontes y descubre soluciones innovadoras para la
+						industria y la vida cotidiana."
+					</p>
+				</div>
+			</div>
 		</div>
-		<div class='md:w-1/2 bg-[#004AAD] text-white py-3 md:py-6 text-sm md:text-lg font-[OpenSansss] px-3'>
-			<p>"Amplía tus horizontes y descubre soluciones innovadoras para la industria y la vida cotidiana."</p>
-		</div>
-	</div>
-	<Videos />
-	<Categorias />
-	<Galeria />
-	<Organizer />
-</section>
+		<Videos />
+		<Categorias />
+		<Galeria />
+		<Organizer />
+	</section>
 </Layout>
 
 <style>
-	.MtechRobot {
-		mask-image: linear-gradient(black 40%, transparent);
-		opacity: 95%;
-	}
-	.capa {
-		background: linear-gradient(
-			to bottom,
-			rgb(198, 123, 252),
-			rgba(0, 0, 255, 0)
-		);
-	}
-	
-	
-	.conv {
-		background: linear-gradient(
-			111deg,
-			#8339e9 4%,
-			rgba(2, 1, 8, 1) 50%,
-			#117496 93%
-		);
-		text-align: center;
-		text-shadow: 0px 0px 15px white;
-	}
-
-	.flip-card {
-		background-color: transparent;
-		width: 300px;
-		height: 200px;
-		perspective: 1000px;
-	}
-	.flip-card-inner {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		text-align: center;
-		transition: transform 0.8s;
-		transform-style: preserve-3d;
-	}
-
-	.flip-card:hover .flip-card-inner {
-		transform: rotateY(180deg);
-	}
-
-	.flip-card-front,
-	.flip-card-back {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-		box-shadow:
-			0px 0px 15px 8px #7329ca,
-			inset 0px 0px 15px 90px #7329ca;
-		text-shadow: 0px 0px 15px white;
-		font-weight: bold;
-	}
-
-	.flip-card-front {
-		background-color: #bbb;
-	}
-
-	.flip-card-back {
-		color: white;
-		transform: rotateY(180deg);
-	}
-	.flip-card-front1,
-	.flip-card-back1 {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-		box-shadow:
-			0px 0px 15px 8px #1a4c90,
-			inset 0px 0px 15px 90px #1a4c90;
-		text-shadow: 0px 0px 15px white;
-		font-weight: bold;
-	}
-	.flip-card-front1 {
-		background-color: #bbb;
-	}
-
-	.flip-card-back1 {
-		color: white;
-		transform: rotateY(180deg);
-	}
-
-	.flip-card-front2,
-	.flip-card-back2 {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-		box-shadow:
-			0px 0px 15px 8px #980944,
-			inset 0px 0px 15px 90px #980944;
-		text-shadow: 0px 0px 15px white;
-		font-weight: bold;
-	}
-	.flip-card-front2 {
-		background-color: #bbb;
-	}
-
-	.flip-card-back2 {
-		color: white;
-		transform: rotateY(180deg);
-	}
-
+	.video-overlay {
+            object-fit: cover;
+        }
 	@media (min-width: 768px) {
 	}
 	@media (max-width: 1278px) {

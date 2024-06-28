@@ -2,14 +2,140 @@
 import '../styles/fonts.css';
 ---
 
-<section >
-	<div class="relative ">
-		<a href="https://futuristics-minds.industrialtransformation.mx/" target="_blank"> <img src='/img/index/GRANFINALV2.webp' alt='' class='bottom-0 w-full ' /></a>
-		<button class='absolute right-[28px] bottom-0 w-[90px] sm:w-[180px] sm:right-[95px] lg:w-[300px] lg:right-[80px]'>
-				<img src='/img/index/BOTOEQUIPOS.webp' alt='' class="w-full "/>
-				<p class="absolute inset-0 flex font-[pointles] items-center justify-center text-[7px] sm:text-[11px] lg:text-[20px]  text-white">FINALISTAS</p>
-			</div>
+<section>
+	<div class='relative'>
+		<a
+			href='https://futuristics-minds.industrialtransformation.mx/'
+			target='_blank'
+		>
+			<img
+				src='/img/index/GRANFINALV2.webp'
+				alt=''
+				class='bottom-0 w-full'
+			/></a
+		>
+		<button
+			data-modal-target='default-modal'
+			data-modal-toggle='default-modal'
+			class='absolute right-[28px] bottom-0 w-[90px] sm:w-[180px] sm:right-[95px] lg:w-[300px] lg:right-[80px]'
+			type='button'
+		>
+			<img src='/img/index/BOTOEQUIPOS.webp' alt='' class='w-full' />
+			<p
+				class='absolute inset-0 flex font-[pointles] items-center justify-center text-[7px] sm:text-[11px] lg:text-[20px] text-white'
+			>
+				FINALISTAS
+			</p>
 		</button>
+
+		<div
+			id='default-modal'
+			tabindex='-1'
+			aria-hidden='true'
+			class='hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full'
+		>
+			<div class='relative p-4 w-full max-w-3xl max-h-full'>
+				<div class=''>
+					<ul
+						class='flex text-[#BF64FF] text-[6px] md:text-sm text-center'
+						id='default-styled-tab'
+						data-tabs-toggle='#default-styled-tab-content'
+						data-tabs-active-classes='text-[#BF64FF] hover:text-[#BF64FF] border-[#BF64FF]'
+						data-tabs-inactive-classes='dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300'
+						role='tablist'
+					>
+						<li role='presentation'>
+							<button
+								class='inline-block mb-[-2px] p-2 bg-black border-t-[2px] border-r-[2px] border-l-[2px] border-white'
+								id='profile-styled-tab'
+								data-tabs-target='#styled-profile'
+								type='button'
+								role='tab'
+								aria-controls='profile'
+								aria-selected='false'
+							>
+								SUMO AUTÓNOMO
+							</button>
+						</li>
+						<li role='presentation'>
+							<button
+								class='inline-block mb-[-1px] p-2 bg-black border-t-[2px] border-r-[2px] border-l-[2px] border-white'
+								id='dashboard-styled-tab'
+								data-tabs-target='#styled-dashboard'
+								type='button'
+								role='tab'
+								aria-controls='dashboard'
+								aria-selected='false'
+							>
+								M-TECH INNOVATIONS
+							</button>
+						</li>
+						<li role='presentation'>
+							<button
+								class='inline-block mb-[-1px] p-2 bg-black border-t-[2px] border-r-[2px] border-l-[2px] border-white'
+								id='settings-styled-tab'
+								data-tabs-target='#styled-settings'
+								type='button'
+								role='tab'
+								aria-controls='settings'
+								aria-selected='false'
+							>
+								M-TECH ENGINEERS
+							</button>
+						</li>
+					</ul>
+				</div>
+				<div id='default-styled-tab-content'>
+					<div
+						class='hidden border-[2px] border-white'
+						id='styled-profile'
+						role='tabpanel'
+						aria-labelledby='profile-tab'
+					>
+						<img
+							src='/img/index/EQUIPOS_Sumo.webp'
+							alt='Equipos Sumo Automata'
+						/>
+					</div>
+					<div
+						class='hidden border-[2px] border-white'
+						id='styled-dashboard'
+						role='tabpanel'
+						aria-labelledby='dashboard-tab'
+					>
+						<img
+							src='/img/index/EQUIPOS_engineers.webp'
+							alt='Equipos Engineers'
+						/>
+					</div>
+					<div
+						class='hidden border-[2px] border-white'
+						id='styled-settings'
+						role='tabpanel'
+						aria-labelledby='settings-tab'
+					>
+						<img
+							src='/img/index/EQUIPOS_Innovations.webp'
+							alt='Equipos Innovations'
+						/>
+					</div>
+					<div
+						class='hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800'
+						id='styled-contacts'
+						role='tabpanel'
+						aria-labelledby='contacts-tab'
+					>
+						<p class='text-sm text-gray-500 dark:text-gray-400'>
+							This is some placeholder content the <strong
+								class='font-medium text-gray-800 dark:text-white'
+								>Contacts tab's associated content</strong
+							>. Clicking another tab will toggle the visibility of this one for
+							the next. The tab JavaScript swaps classes to control the content
+							visibility and styling.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	
 </section>

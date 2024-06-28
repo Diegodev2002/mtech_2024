@@ -34,5 +34,19 @@ const aliados_estrategicos = [
 		width: 100,
 		height: 100,
 	},
+	{
+		link: '',
+		src: '/img/logos/logo-ieca.webp',
+		alt: 'Logotipo de Idea Guanajuato',
+		width: 200,
+		height: 200,
+	},
+	{
+		link: '',
+		src: '/img/logos/UPG.webp',
+		alt: 'Logotipo de Idea Guanajuato',
+		width: 200,
+		height: 200,
+	},
 ];
 export { aliados_estrategicos };
