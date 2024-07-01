@@ -45,6 +45,7 @@ import '../styles/fonts.css';
 						role='tablist'
 					>
 						<li role='presentation'>
+							<div class="relative skew-negative-2">
 							<button
 								class='inline-block mb-[-2px] p-2 bg-black border-t-[2px] border-r-[2px] border-l-[2px] border-white'
 								id='profile-styled-tab'
@@ -54,12 +55,14 @@ import '../styles/fonts.css';
 								aria-controls='profile'
 								aria-selected='false'
 							>
-								SUMO AUTÓNOMO
+							<span class=" inset-0 flex items-center justify-center mr-3">SUMO AUTÓNOMO</span>
 							</button>
+						</div>
 						</li>
 						<li role='presentation'>
-							<button
-								class='inline-block mb-[-1px] p-2 bg-black border-t-[2px] border-r-[2px] border-l-[2px] border-white'
+							<div class="relative   skew-negative-20">
+								<button
+								class='inline-block ml-[-18px] p-2 bg-black border-t-[2px] border-r-[2px] border-l-[2px] border-white'
 								id='dashboard-styled-tab'
 								data-tabs-target='#styled-dashboard'
 								type='button'
@@ -67,10 +70,13 @@ import '../styles/fonts.css';
 								aria-controls='dashboard'
 								aria-selected='false'
 							>
-								M-TECH INNOVATIONS
+							<span class=" inset-0 flex items-center justify-center skew-positive-20">M-TECH INNOVATIONS</span>
 							</button>
+							</div>
+							
 						</li>
 						<li role='presentation'>
+							<div class="relative   skew-negative-20">
 							<button
 								class='inline-block mb-[-1px] p-2 bg-black border-t-[2px] border-r-[2px] border-l-[2px] border-white'
 								id='settings-styled-tab'
@@ -80,9 +86,12 @@ import '../styles/fonts.css';
 								aria-controls='settings'
 								aria-selected='false'
 							>
-								M-TECH ENGINEERS
+							<span class=" inset-0 flex items-center justify-center skew-positive-20">M-TECH ENGINEERS</span>
 							</button>
+						</div>
 						</li>
+						
+					
 					</ul>
 				</div>
 				<div id='default-styled-tab-content'>
@@ -119,23 +128,25 @@ import '../styles/fonts.css';
 							alt='Equipos Engineers'
 						/>
 					</div>
-					<div
-						class='hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800'
-						id='styled-contacts'
-						role='tabpanel'
-						aria-labelledby='contacts-tab'
-					>
-						<p class='text-sm text-gray-500 dark:text-gray-400'>
-							This is some placeholder content the <strong
-								class='font-medium text-gray-800 dark:text-white'
-								>Contacts tab's associated content</strong
-							>. Clicking another tab will toggle the visibility of this one for
-							the next. The tab JavaScript swaps classes to control the content
-							visibility and styling.
-						</p>
-					</div>
+					
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+<style>
+	.skew-negative-20 {
+			transform: skew(35deg);
+	}
+	.skew-positive-20 {
+			transform: skew(-35deg);
+	}
+</style>
+<style>
+	.skew-negative-2 {
+		clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
+	}
+	.skew-positive-2 {
+		transform: skew(-35deg);
+	}
+</style>
