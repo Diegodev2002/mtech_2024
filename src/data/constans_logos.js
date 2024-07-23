@@ -24,7 +24,7 @@ const aliados_estrategicos = [
 		link: '',
 		src: '/img/logos/guanajuato.webp',
 		alt: 'Guanajuato',
-		width: 250,
+		width: 220,
 		height: 200,
 	},
 	{
