@@ -22,13 +22,6 @@ const aliados_estrategicos = [
 	},
 	{
 		link: '',
-		src: '/img/logos/guanajuato.webp',
-		alt: 'Guanajuato',
-		width: 220,
-		height: 200,
-	},
-	{
-		link: '',
 		src: '/img/logos/uni_upg.webp',
 		alt: 'Logotipo de Idea Guanajuato',
 		width: 250,
