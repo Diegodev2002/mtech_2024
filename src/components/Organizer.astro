@@ -1,6 +1,7 @@
 ---
 import { MarqueeReact } from './MarqueeReact';
 import { aliados_estrategicos } from '../data/constans_logos';
+import { LogoGrid } from './LogoGrid';
 ---
 
 <section>
@@ -28,9 +29,8 @@ import { aliados_estrategicos } from '../data/constans_logos';
 				<p class='text-black text-3xl text-center font-bold'>
 					ALIADOS ESTRATÉGICOS
 				</p>
-
-				<div>
-					<MarqueeReact images={aliados_estrategicos} client:only />
+				<div class="px-20">
+					<LogoGrid logos={aliados_estrategicos} client:only />
 				</div>
 			</div>
 		</div>
