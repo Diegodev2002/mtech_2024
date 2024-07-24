@@ -1,100 +1,143 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Galeria from '../components/Galeria.astro';
-import Footer from '../components/Footer.astro';
-import Videos from '../components/Videos.astro';
-import '../styles/fonts.css';
-import Categorias from '../components/Categorias.astro';
-import Organizer from '../components/Organizer.astro';
-import BannerFinal from '../components/BannerFinal.astro';
+import Layout from "../layouts/Layout.astro";
+import Galeria from "../components/Galeria.astro";
+import Footer from "../components/Footer.astro";
+import Videos from "../components/Videos.astro";
+import "../styles/fonts.css";
+import Categorias from "../components/Categorias.astro";
+import Organizer from "../components/Organizer.astro";
+import BannerFinal from "../components/BannerFinal.astro";
+import { Finalists } from "../components/Finalists";
+import Finalistas from "../components/Finalistas.astro";
 ---
 
-<Layout title='M-TECH 2024'>
-	<section class='relative justify-center bg-black h-[350px] md:h-[550px]'>
-		<div class='container'>
-			<img
-				src='/img/index/bg1.webp'
-				alt='Imagen M_TECH'
-				class='MtechRobot block absolute z-1 w-[100%] object-right object-cover'
-			/>
-			<video
-				src='/videos/ArtesMTech2024.mp4'
-				class='absolute inset-0 z-20 w-full h-full video-overlay opacity-10'
-				autoplay
-				muted
-				loop></video>
-		</div>
-		<div data-aos='zoom-in-up' data-aos-duration='90000'>
-			<img
-				src='/img/index/logoMtech.webp'
-				alt=''
-				class='relative z-50 w-[150px] md:w-[350px] m-auto pt-[8rem] md:pt-[11rem]'
-			/>
-		</div>
-	</section>
-	<BannerFinal />
-	<section class='inline-block bg-black'>
-		<div class='relative'>
-			<img src='/img/index/imgMano.webp' alt='' class='block w-screen h-auto ' />
+<Layout title="M-TECH 2024">
+  <section class="relative justify-center bg-black h-[350px] md:h-[550px]">
+    <div class="container">
+      <img
+        src="/img/index/bg1.webp"
+        alt="Imagen M_TECH"
+        class="MtechRobot block absolute z-1 w-[100%] object-right object-cover"
+      />
+      <video
+        src="/videos/ArtesMTech2024.mp4"
+        class="absolute inset-0 z-20 w-full h-full video-overlay opacity-10"
+        autoplay
+        muted
+        loop></video>
+    </div>
+    <div data-aos="zoom-in-up" data-aos-duration="90000">
+      <img
+        src="/img/index/logoMtech.webp"
+        alt=""
+        class="relative z-50 w-[150px] md:w-[350px] m-auto pt-[8rem] md:pt-[11rem]"
+      />
+    </div>
+  </section>
+  <BannerFinal />
+  <Finalistas />
+  <section class="inline-block bg-black">
+    <div class="relative">
+      <img src="/img/index/imgMano.webp" alt="" class="block w-screen h-auto" />
 
-			<div class='absolute top-0 left-0 pl-5 '>
-				<div data-aos='fade-right' class='flex'>
-					<p
-						class='font-[pointles] text-white text-md md:text-3xl mt-1 md:mt-7'
-					>
-						//M-TECH
-					</p>
-					<p
-						class='text-[#BF64FF] text-md md:text-3xl mt-1 md:mt-7 font-[pointles]'
-					>
-						2024
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class='relative text-center bg-black'>
-		<div class='md:flex'>
-			<div class='md:w-1/2 bg-[#BF64FF] text-sm md:text-lg py-3 md:py-8 px-3'>
-				<div data-aos='flip-left' data-aos-duration='9000'>
-					<p class='font-[OpenSansss] text-white'>
-						¿Te gustaría <span class='font-bold'>romper los límites</span> de tu
-						imaginación?
-					</p>
-				</div>
-			</div>
-			<div
-				class='md:w-1/2 bg-[#004AAD] text-white py-3 md:py-6 text-sm md:text-lg font-[OpenSansss] px-3'
-			>
-				<div data-aos='flip-right' data-aos-duration='9000'>
-					<p>
-						"Amplía tus horizontes y descubre soluciones innovadoras para la
-						industria y la vida cotidiana."
-					</p>
-				</div>
-			</div>
-		</div>
-		<Videos />
-		<Categorias />
-		<Galeria />
-		<Organizer />
-	</section>
+      <div class="absolute top-0 left-0 pl-5">
+        <div data-aos="fade-right" class="flex">
+          <p
+            class="font-[pointles] text-white text-md md:text-3xl mt-1 md:mt-7"
+          >
+            //M-TECH
+          </p>
+          <p
+            class="text-[#BF64FF] text-md md:text-3xl mt-1 md:mt-7 font-[pointles]"
+          >
+            2024
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="relative text-center bg-black">
+    <div class="md:flex">
+      <div class="md:w-1/2 bg-[#BF64FF] text-sm md:text-lg py-3 md:py-8 px-3">
+        <div data-aos="flip-left" data-aos-duration="9000">
+          <p class="font-[OpenSansss] text-white">
+            ¿Te gustaría <span class="font-bold">romper los límites</span> de tu
+            imaginación?
+          </p>
+        </div>
+      </div>
+      <div
+        class="md:w-1/2 bg-[#004AAD] text-white py-3 md:py-6 text-sm md:text-lg font-[OpenSansss] px-3"
+      >
+        <div data-aos="flip-right" data-aos-duration="9000">
+          <p>
+            "Amplía tus horizontes y descubre soluciones innovadoras para la
+            industria y la vida cotidiana."
+          </p>
+        </div>
+      </div>
+    </div>
+    <Videos />
+    <Categorias />
+    <Galeria />
+    <Organizer />
+  </section>
 </Layout>
 
 <style>
-	.video-overlay {
-		object-fit: cover;
-	}
-	@media (min-width: 768px) {
-	}
-	@media (max-width: 1278px) {
-		.box_2 {
-			margin-top: 0;
-		}
-	}
-	@media (min-width: 1280px) {
-	}
-	@media (min-width: 1536px) {
-	}
+  .video-overlay {
+    object-fit: cover;
+  }
+  @media (min-width: 768px) {
+  }
+  @media (max-width: 1278px) {
+    .box_2 {
+      margin-top: 0;
+    }
+  }
+  @media (min-width: 1280px) {
+  }
+  @media (min-width: 1536px) {
+  }
+
+  button {
+    background: #fff;
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    width: auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+  }
+
+  span {
+    display: inline-block;
+    transform: skew(21deg);
+  }
+
+  button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: rgb(20, 20, 20);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+
+  button:hover {
+    color: #fff;
+  }
+
+  button:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
 </style>

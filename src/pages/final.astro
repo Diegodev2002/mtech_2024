@@ -1,0 +1,14 @@
+---
+import { Finalists } from "../components/Finalists";
+import Layout from "../layouts/Layout.astro";
+---
+<Layout title="M-TECH FINALISTAS">
+    <section class="bg-container">
+        <Finalists client:only="react"/>
+    </section>
+</Layout>
+<style>
+    .bg-container {
+        background-image: url('/img/index/bg-2.webp');
+    }
+</style>
