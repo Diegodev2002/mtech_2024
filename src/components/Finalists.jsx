@@ -25,7 +25,7 @@ export function Finalists() {
                 {finalTeams[activeTab].teams.map((team, index) => (
                     <div key={index} className=" flex flex-col items-center">
                         <img src="/img/index/teamp.webp" alt={`${team.name}`} className='w-[220px] h-auto' />
-                        <div className="relative bottom-10 left-0 right-0 bg-black w-full text-white p-2 text-center">
+                        <div className="relative bottom-10 left-0 right-0 bg-black w-full h-[110px] text-white p-2 text-center">
                             <p className="sm:text-lg text-xs font-[pointles]">{team.name}</p>
                             <p className="sm:text-sm text-xs ">{team.school}</p>
                         </div>

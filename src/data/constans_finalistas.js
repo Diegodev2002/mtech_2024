@@ -29,7 +29,7 @@ const finalTeams =
     ]
   },
   {
-    "category": " M-TECH ENGINEERING",
+    "category": " M-TECH ENGINEERS",
     "teams": [
       { "name": "BYTEBREAKERS", "school": "UNIVERSIDAD POLITÉCNICA DE GUANAJUATO" },
       { "name": "DIEGO", "school": "INSTITUTO TECNOLÓGICO SUPERIOR DE ABASOLO" },
