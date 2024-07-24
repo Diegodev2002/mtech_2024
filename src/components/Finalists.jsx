@@ -9,7 +9,7 @@ export function Finalists() {
     return (
         <div className="mx-auto md:w-[950px] sm:w-[950px]">
             <br /><br />
-            <p className='text-4xl font-extrabold text-center text-white'> EQUIPOS EN LA <br /> <span className='font-[pointles] text-6xl'> GRAN FINAL</span> </p>
+            <p className='font-[pointles] text-6xl text-white text-center'>FINALISTAS</p>
             <div className="flex md:flex-row sm:flex-row flex-col border-b pt-10">
                 {finalTeams.map((tab, index) => (
                     <button
